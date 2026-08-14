@@ -1,0 +1,120 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  background: transparent;
+}
+
+/* ---- Media ----------------------------------------------------------- */
+
+.media {
+  position: relative;
+  /* Extra foot room: the view switch floats over the bottom of the image. */
+  --door-pad: var(--sp-4) var(--sp-3) var(--sp-6);
+
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  overflow: hidden;
+
+  transition:
+    border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+
+.card:hover .media {
+  border-color: var(--c-ink-30);
+  box-shadow: var(--shadow-lift);
+  transform: translateY(-3px);
+}
+
+.badges {
+  position: absolute;
+  top: var(--sp-3);
+  left: var(--sp-3);
+  z-index: 1;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+}
+
+.toggle {
+  position: absolute;
+  left: 50%;
+  bottom: var(--sp-3);
+  z-index: 1;
+  transform: translateX(-50%);
+
+  opacity: 0;
+  transition:
+    opacity var(--dur) var(--ease),
+    transform var(--dur) var(--ease);
+}
+
+.card:hover .toggle,
+.card:focus-within .toggle {
+  opacity: 1;
+}
+
+/**
+ * Touch devices have no hover, so the switch has to be visible from the start —
+ * otherwise the second view would be unreachable on a phone.
+ */
+@media (hover: none) {
+  .toggle {
+    opacity: 1;
+  }
+}
+
+/* ---- Body ------------------------------------------------------------ */
+
+.body {
+  padding-top: var(--sp-4);
+}
+
+.title {
+  font-size: var(--fs-md);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+.trigger {
+  text-align: left;
+  color: var(--c-ink);
+  transition: color var(--dur) var(--ease);
+}
+
+.card:hover .trigger {
+  color: var(--c-ink-70);
+}
+
+.srHint {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: var(--sp-1) var(--sp-3);
+  margin-top: var(--sp-1);
+}
+
+.article {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--c-ink-45);
+}
+
+.summary {
+  font-size: var(--fs-sm);
+  color: var(--c-ink-45);
+}

@@ -1,0 +1,215 @@
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+/* ---- Gallery --------------------------------------------------------- */
+
+.galleryColumn {
+  background: var(--c-sand-100);
+  border-right: 1px solid var(--c-line);
+}
+
+.gallery {
+  position: sticky;
+  top: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-5);
+  padding: var(--sp-7) var(--sp-6);
+}
+
+.stage {
+  /* Room to show the door nearly full height — this is the detail view. */
+  --door-frame: 1 / 1.9;
+  width: min(100%, 330px);
+  /*
+   * Cap the width so the derived height, plus the padding and the switch below,
+   * still fits the viewport — otherwise the sticky column would be taller than
+   * the screen and the door would be cropped instead of pinned.
+   */
+  max-width: calc((100dvh - 280px) / 1.9);
+
+  border: 1px solid var(--c-line);
+  background: var(--c-white);
+}
+
+/* ---- Details --------------------------------------------------------- */
+
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  padding: var(--sp-7) var(--sp-6);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  /* Leaves room for the close button in the corner. */
+  padding-right: var(--sp-7);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.collection {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--c-ink-45);
+}
+
+.title {
+  font-size: var(--fs-xl);
+  line-height: 1.1;
+}
+
+.article {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-2);
+
+  font-size: var(--fs-sm);
+  color: var(--c-ink-45);
+}
+
+.article strong {
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  color: var(--c-ink);
+}
+
+.divider {
+  width: 16px;
+  height: 1px;
+  background: var(--c-line);
+}
+
+.description {
+  font-size: var(--fs-base);
+  line-height: 1.6;
+  color: var(--c-ink-70);
+}
+
+/* ---- Highlights ------------------------------------------------------ */
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--c-line-soft);
+  border: 1px solid var(--c-line-soft);
+}
+
+.highlight {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding: var(--sp-4);
+  background: var(--c-white);
+}
+
+.highlightLabel {
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-ink-45);
+}
+
+.highlightValue {
+  font-size: var(--fs-sm);
+  color: var(--c-ink);
+  overflow-wrap: anywhere;
+}
+
+/* ---- Blocks ---------------------------------------------------------- */
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.blockTitle {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--c-ink-45);
+}
+
+.sizes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+.size {
+  padding: var(--sp-2) var(--sp-4);
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+  border: 1px solid var(--c-line);
+}
+
+.customSizes {
+  font-size: var(--fs-sm);
+  line-height: 1.5;
+  color: var(--c-ink-45);
+}
+
+.cta {
+  margin-top: auto;
+  padding-top: var(--sp-2);
+}
+
+/* ---- Responsive ------------------------------------------------------ */
+
+@media (max-width: 959px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .galleryColumn {
+    border-right: none;
+    border-bottom: 1px solid var(--c-line);
+  }
+
+  /* Stacked into one column, a sticky gallery would pin over the copy. */
+  .gallery {
+    position: static;
+    padding: var(--sp-6) var(--sp-5);
+  }
+
+  .stage {
+    width: min(100%, 260px);
+    max-width: calc((70dvh) / 1.9);
+  }
+
+  .details {
+    padding: var(--sp-6) var(--sp-5) var(--sp-7);
+  }
+}
+
+@media (max-width: 519px) {
+  .highlights {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .header {
+    padding-right: var(--sp-6);
+  }
+
+  .title {
+    font-size: var(--fs-lg);
+  }
+}

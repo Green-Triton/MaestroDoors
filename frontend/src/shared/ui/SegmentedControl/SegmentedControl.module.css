@@ -1,0 +1,63 @@
+.root {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--count), 1fr);
+  isolation: isolate;
+
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--c-line);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+/** The sliding pill that marks the active option. */
+.indicator {
+  position: absolute;
+  z-index: -1;
+  inset: 3px auto 3px 3px;
+  width: calc((100% - 6px) / var(--count));
+  transform: translateX(calc(var(--active) * 100%));
+
+  background: var(--c-ink);
+  border-radius: 999px;
+  transition: transform var(--dur) var(--ease);
+}
+
+.option {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--c-ink-70);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  border-radius: 999px;
+  transition: color var(--dur) var(--ease);
+}
+
+.option:hover:not(.active) {
+  color: var(--c-ink);
+}
+
+.active {
+  color: var(--c-white);
+}
+
+/* ---- Sizes ----------------------------------------------------------- */
+
+.sm .option {
+  min-height: 26px;
+  padding: 0 var(--sp-3);
+  font-size: var(--fs-xs);
+}
+
+.md .option {
+  min-height: 36px;
+  padding: 0 var(--sp-5);
+  font-size: var(--fs-sm);
+}

@@ -1,0 +1,71 @@
+/**
+ * On narrow screens the chips scroll sideways rather than wrapping into a tall
+ * block that pushes the grid off screen.
+ */
+.scroller {
+  overflow-x: auto;
+  scrollbar-width: none;
+  margin-inline: calc(var(--gutter) * -1);
+  padding-inline: var(--gutter);
+}
+
+.scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.list {
+  display: flex;
+  gap: var(--sp-2);
+  width: max-content;
+  min-width: 100%;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  min-height: 38px;
+  padding: 0 var(--sp-4);
+
+  color: var(--c-ink-70);
+  font-size: var(--fs-sm);
+  white-space: nowrap;
+
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  border-radius: 999px;
+
+  transition:
+    color var(--dur) var(--ease),
+    background-color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+
+.chip:hover:not(.selected) {
+  color: var(--c-ink);
+  border-color: var(--c-ink-30);
+}
+
+.selected {
+  color: var(--c-white);
+  background: var(--c-ink);
+  border-color: var(--c-ink);
+}
+
+.count {
+  font-size: var(--fs-xs);
+  font-variant-numeric: tabular-nums;
+  color: var(--c-ink-45);
+  transition: color var(--dur) var(--ease);
+}
+
+.selected .count {
+  color: var(--c-accent);
+}
+
+@media (min-width: 1024px) {
+  .list {
+    flex-wrap: wrap;
+    width: auto;
+  }
+}

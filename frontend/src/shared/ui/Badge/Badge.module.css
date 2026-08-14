@@ -1,0 +1,26 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  height: 22px;
+  padding: 0 var(--sp-2);
+
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+}
+
+.accent {
+  background: var(--c-accent);
+  color: var(--c-ink);
+}
+
+.neutral {
+  border-color: var(--c-line);
+  background: var(--c-white);
+  color: var(--c-ink-70);
+}

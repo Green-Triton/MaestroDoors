@@ -1,0 +1,48 @@
+.catalog {
+  padding-top: clamp(var(--sp-7), 6vw, var(--sp-9));
+  scroll-margin-top: var(--header-h);
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding-bottom: var(--sp-5);
+}
+
+.headText {
+  max-width: 44rem;
+}
+
+.title {
+  font-size: var(--fs-lg);
+  font-weight: 400;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.subtitle {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-base);
+  color: var(--c-ink-45);
+  text-wrap: pretty;
+}
+
+.counter {
+  font-size: var(--fs-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--c-ink-45);
+  white-space: nowrap;
+}
+
+.counterValue {
+  font-size: var(--fs-md);
+  color: var(--c-ink);
+}
+
+.filter {
+  padding-block: var(--sp-5) var(--sp-7);
+  border-top: 1px solid var(--c-line);
+}

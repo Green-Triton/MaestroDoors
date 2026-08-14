@@ -1,0 +1,81 @@
+/**
+ * Design tokens.
+ *
+ * The palette is lifted from the printed catalogue: the vector fills in
+ * "Каталог MaestroDoors ИЮЛЬ.pdf" resolve to #fdb21e (brand amber), #5b5b5b
+ * (heading grey), #2b2a29 (body graphite) and #ebecec (rule grey). The sand
+ * tints are the neutral warm ground the brief asks for.
+ */
+
+:root {
+  /* ---- Colour ------------------------------------------------------- */
+  --c-white: #ffffff;
+  --c-sand-50: #fbfaf8;
+  --c-sand-100: #f6f3ee;
+  --c-sand-200: #efeae1;
+
+  --c-ink: #2b2a29;
+  --c-ink-70: #5b5b5b;
+  --c-ink-45: #8b8987;
+  --c-ink-30: #a9a7a4;
+
+  --c-line: #e5e5e5;
+  --c-line-soft: #f0ede8;
+
+  --c-accent: #fdb21e;
+  --c-accent-deep: #e09707;
+
+  --c-surface: var(--c-white);
+  --c-canvas: var(--c-sand-50);
+
+  /* ---- Type --------------------------------------------------------- */
+  --font-sans: 'Jost', 'Century Gothic', 'Segoe UI', -apple-system,
+    BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+
+  --fs-xs: 0.6875rem; /* 11px — labels, article codes */
+  --fs-sm: 0.8125rem; /* 13px — captions, spec values */
+  --fs-base: 0.9375rem; /* 15px — body */
+  --fs-md: 1.0625rem; /* 17px — card titles */
+  --fs-lg: 1.375rem; /* 22px — section titles */
+  --fs-xl: 2rem; /* 32px — modal title */
+  --fs-2xl: clamp(2.25rem, 5.5vw, 3.75rem); /* hero */
+
+  --tracking-wide: 0.08em;
+  --tracking-wider: 0.16em;
+
+  /* ---- Space -------------------------------------------------------- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+
+  --container: 1440px;
+  --gutter: clamp(1.25rem, 4vw, 3.5rem);
+
+  /* ---- Motion ------------------------------------------------------- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur-fast: 160ms;
+  --dur: 260ms;
+  --dur-slow: 420ms;
+
+  /* ---- Elevation ---------------------------------------------------- */
+  --shadow-card: 0 1px 2px rgba(43, 42, 41, 0.04);
+  --shadow-lift: 0 18px 48px -24px rgba(43, 42, 41, 0.28);
+  --shadow-modal: 0 40px 120px -32px rgba(43, 42, 41, 0.42);
+
+  --radius-sm: 2px;
+  --radius: 4px;
+
+  --header-h: 72px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-h: 60px;
+  }
+}

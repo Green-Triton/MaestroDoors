@@ -1,0 +1,8 @@
+.note {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+  color: var(--c-ink-45);
+  text-align: center;
+  transition: color var(--dur) var(--ease);
+}
