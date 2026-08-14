@@ -130,7 +130,7 @@ RENDER = RenderConfig()
 #: Status labels printed above a product title.
 BADGE_LABELS: dict[str, str] = {
     "НОВИНКА": "Новинка",
-    "СКЛАД": "В наличии",
+    "СКЛАД": "Склад",
 }
 
 #: Running heads are authored by hand in CorelDRAW and carry stray production

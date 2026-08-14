@@ -1,5 +1,7 @@
 import { Container } from '@shared/ui'
-import { CONTACTS, SITE } from '@shared/config/site'
+// import { CONTACTS, SITE } from '@shared/config/site'
+import { SITE } from '@shared/config/site'
+
 
 import styles from './SiteFooter.module.css'
 
@@ -18,7 +20,7 @@ export const SiteFooter = ({ source }: SiteFooterProps) => (
           <p className={styles.tagline}>{SITE.tagline}</p>
         </div>
 
-        <ul className={styles.contacts}>
+        {/* <ul className={styles.contacts}>
           {CONTACTS.map((contact) => (
             <li key={contact.href} className={styles.contact}>
               <span className={styles.role}>{contact.role}</span>
@@ -28,7 +30,7 @@ export const SiteFooter = ({ source }: SiteFooterProps) => (
               <span className={styles.name}>{contact.name}</span>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </div>
 
       <div className={styles.bottom}>

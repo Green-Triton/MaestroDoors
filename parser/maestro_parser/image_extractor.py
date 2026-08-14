@@ -1,25 +1,4 @@
-"""Render clean product shots out of the catalogue PDF.
-
-Why not simply export the embedded images?
---------------------------------------------------
-The naive approach — walking `page.get_images()` and saving each XObject — is
-what produced the unusable first attempt, for three reasons:
-
-1. **Half the doors are layered.** Glazing, handles, lock plates and mirror
-   inserts are separate images stacked on top of the door. Exporting the base
-   image alone yields a door with holes where the glass should be.
-2. **Alpha lives in a sibling object.** Most shots are a JPEG plus a separate
-   soft mask, so exporting XObjects blindly writes out a pile of black-and-white
-   mask files next to the real artwork.
-3. **Framing is inconsistent.** The exterior shot includes the frame and the
-   interior shot does not, so exporting raw bounding boxes makes the door jump
-   in size the moment you toggle between the two views.
-
-This module instead *rasterises the page* through the clip rectangle of each
-slot. The PDF renderer composites the whole stack — base image, soft mask and
-every overlay — exactly as the catalogue is printed. Both views are then padded
-onto one canvas geometry so the grid stays visually calm.
-"""
+"""Render clean product shots out of the catalogue PDF."""
 
 from __future__ import annotations
 

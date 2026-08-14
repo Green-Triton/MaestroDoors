@@ -1,5 +1,7 @@
 import { Container } from '@shared/ui'
-import { PRIMARY_CONTACT, SITE } from '@shared/config/site'
+// import { PRIMARY_CONTACT, SITE } from '@shared/config/site'
+import { SITE } from '@shared/config/site'
+
 
 import styles from './SiteHeader.module.css'
 
@@ -47,9 +49,9 @@ export const SiteHeader = ({ totalCount }: SiteHeaderProps) => (
         </a>
       </nav>
 
-      <a href={PRIMARY_CONTACT.href} className={styles.phone}>
+      {/* <a href={PRIMARY_CONTACT.href} className={styles.phone}>
         {PRIMARY_CONTACT.phone}
-      </a>
+      </a> */}
     </Container>
   </header>
 )
