@@ -9,6 +9,7 @@ import { defineConfig } from 'vite'
  */
 export default defineConfig({
   plugins: [react()],
+  base: '/MaestroDoors/',
   resolve: {
     alias: {
       '@app': fileURLToPath(new URL('./src/app', import.meta.url)),
