@@ -1,0 +1,27 @@
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Node (см. также frontend/.gitignore)
+node_modules/
+
+# Артефакты парсера — пересобираются командой `python parser/run.py`
+output/
+
+# ОС и редакторы
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+
+# claude
+.claude/
+claude/
+
+# Каталог
+*.pdf
