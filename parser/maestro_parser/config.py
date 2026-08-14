@@ -28,7 +28,7 @@ DEFAULT_DATA_PATH = (
 )
 
 #: Public URL prefix under which `DEFAULT_IMAGE_DIR` is served by Vite.
-PUBLIC_IMAGE_BASE = "/doors"
+PUBLIC_IMAGE_BASE = "doors"
 
 
 # --------------------------------------------------------------------------

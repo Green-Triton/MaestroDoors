@@ -1,7 +1,7 @@
 {
   "source": "Каталог MaestroDoors ИЮЛЬ.pdf",
-  "generatedAt": "2026-08-14T13:29:38+00:00",
-  "cover": "/doors/cover.webp",
+  "generatedAt": "2026-08-14T19:27:19+00:00",
+  "cover": "doors/cover.webp",
   "collections": [
     {
       "id": "met-mdf-60",
@@ -57,10 +57,10 @@
       "badges": [],
       "description": "Входная дверь «МЕЛАМИН»: полотно 60мм / с МДФ 60мм, 2 контура. Снаружи — атмосферостойкое. Цвет - \"Антик медь\". Внутри — эконом панель 6 мм. Цвет - \"Венге светлый\".",
       "images": {
-        "front": "/doors/mst-1-front.webp",
-        "back": "/doors/mst-1-back.webp",
-        "frontCard": "/doors/mst-1-front-card.webp",
-        "backCard": "/doors/mst-1-back-card.webp"
+        "front": "doors/mst-1-front.webp",
+        "back": "doors/mst-1-back.webp",
+        "frontCard": "doors/mst-1-front-card.webp",
+        "backCard": "doors/mst-1-back-card.webp"
       },
       "specs": {
         "material": "Толщина 60мм / с МДФ 60мм",
@@ -160,10 +160,10 @@
       ],
       "description": "Входная дверь «КРЕДО»: полотно 60мм / с МДФ 60мм, 2 контура. YJ-302. Снаружи — атмосферостойкое. Цвет - \"Антик серебро\". Внутри — фрезерованная МДФ панель 6 мм. Цвет - \"Акация светлая поперечная\".",
       "images": {
-        "front": "/doors/mst-2-front.webp",
-        "back": "/doors/mst-2-back.webp",
-        "frontCard": "/doors/mst-2-front-card.webp",
-        "backCard": "/doors/mst-2-back-card.webp"
+        "front": "doors/mst-2-front.webp",
+        "back": "doors/mst-2-back.webp",
+        "frontCard": "doors/mst-2-front-card.webp",
+        "backCard": "doors/mst-2-back-card.webp"
       },
       "specs": {
         "material": "Толщина 60мм / с МДФ 60мм",
@@ -261,10 +261,10 @@
       "badges": [],
       "description": "Входная дверь «МЕТ/МЕТ»: полотно 64мм, 2 контура. Снаружи — атмосферостойкое. Цвет - \"Антик медь\". Внутри — лист металла.",
       "images": {
-        "front": "/doors/mst-3-front.webp",
-        "back": "/doors/mst-3-back.webp",
-        "frontCard": "/doors/mst-3-front-card.webp",
-        "backCard": "/doors/mst-3-back-card.webp"
+        "front": "doors/mst-3-front.webp",
+        "back": "doors/mst-3-back.webp",
+        "frontCard": "doors/mst-3-front-card.webp",
+        "backCard": "doors/mst-3-back-card.webp"
       },
       "specs": {
         "material": "Толщина 64мм",
@@ -364,10 +364,10 @@
       ],
       "description": "Входная дверь «ДИПЛОМАТ»: полотно 70мм / с МДФ 70мм, 2 контура. Снаружи — атмосферостойкое. Цвет - \"Антик серебро\". Внутри — фрезерованная МДФ панель 6 мм. Цвет - \"белая матовая\".",
       "images": {
-        "front": "/doors/ms-1-front.webp",
-        "back": "/doors/ms-1-back.webp",
-        "frontCard": "/doors/ms-1-front-card.webp",
-        "backCard": "/doors/ms-1-back-card.webp"
+        "front": "doors/ms-1-front.webp",
+        "back": "doors/ms-1-back.webp",
+        "frontCard": "doors/ms-1-front-card.webp",
+        "backCard": "doors/ms-1-back-card.webp"
       },
       "specs": {
         "material": "Толщина 70мм / с МДФ 70мм",
@@ -465,10 +465,10 @@
       "badges": [],
       "description": "Входная дверь «АМУР»: полотно 70мм / с МДФ 70мм, 2 контура. Снаружи — атмосферостойкое. Цвет - \"Антик серебро\". Внутри — фрезерованная МДФ панель 6 мм. Цвет - \"светло серый Грей шагрень\".",
       "images": {
-        "front": "/doors/ms-2-front.webp",
-        "back": "/doors/ms-2-back.webp",
-        "frontCard": "/doors/ms-2-front-card.webp",
-        "backCard": "/doors/ms-2-back-card.webp"
+        "front": "doors/ms-2-front.webp",
+        "back": "doors/ms-2-back.webp",
+        "frontCard": "doors/ms-2-front-card.webp",
+        "backCard": "doors/ms-2-back-card.webp"
       },
       "specs": {
         "material": "Толщина 70мм / с МДФ 70мм",
@@ -569,10 +569,10 @@
       ],
       "description": "Входная дверь «ДИВО ЗЕРКАЛО»: полотно 70мм / с МДФ 70мм, 2 контура. Снаружи — атмосферостойкое. Цвет - \"Антик серебро\". Внутри — фрезерованная МДФ панель 10 мм. Цвет - \"белая матовая\" с зеркалом.",
       "images": {
-        "front": "/doors/ms-3-front.webp",
-        "back": "/doors/ms-3-back.webp",
-        "frontCard": "/doors/ms-3-front-card.webp",
-        "backCard": "/doors/ms-3-back-card.webp"
+        "front": "doors/ms-3-front.webp",
+        "back": "doors/ms-3-back.webp",
+        "frontCard": "doors/ms-3-front-card.webp",
+        "backCard": "doors/ms-3-back-card.webp"
       },
       "specs": {
         "material": "Толщина 70мм / с МДФ 70мм",
@@ -670,10 +670,10 @@
       "badges": [],
       "description": "Входная дверь «ЛУЧ»: полотно 80мм/ с МДФ 80мм, 2 контура. Снаружи — атмосферостойкое. Цвет - \"Антик серебро\". Внутри — фрезерованная МДФ панель 6 мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/m-2-front.webp",
-        "back": "/doors/m-2-back.webp",
-        "frontCard": "/doors/m-2-front-card.webp",
-        "backCard": "/doors/m-2-back-card.webp"
+        "front": "doors/m-2-front.webp",
+        "back": "doors/m-2-back.webp",
+        "frontCard": "doors/m-2-front-card.webp",
+        "backCard": "doors/m-2-back-card.webp"
       },
       "specs": {
         "material": "Толщина 80мм/ с МДФ 80мм",
@@ -771,10 +771,10 @@
       "badges": [],
       "description": "Входная дверь «ВЕРТИКАЛЬ»: полотно 80мм/ с МДФ 80мм, 2 контура. Снаружи — атмосферостойкое. Цвет - \"Антик серебро\". Внутри — фрезерованная МДФ панель 6 мм линии. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/m-3-front.webp",
-        "back": "/doors/m-3-back.webp",
-        "frontCard": "/doors/m-3-front-card.webp",
-        "backCard": "/doors/m-3-back-card.webp"
+        "front": "doors/m-3-front.webp",
+        "back": "doors/m-3-back.webp",
+        "frontCard": "doors/m-3-front-card.webp",
+        "backCard": "doors/m-3-back-card.webp"
       },
       "specs": {
         "material": "Толщина 80мм/ с МДФ 80мм",
@@ -872,10 +872,10 @@
       "badges": [],
       "description": "Входная дверь «СБ-МИГ»: полотно 83мм / с МДФ 92мм, 2 контура. Снаружи — атмосферостойкое. Цвет - \"Антик серебро\". Внутри — сборная МДФ панель 16 мм. Цвет - \"Астана эшвайт\" + Черная лакобель. СЪЕМНАЯ.",
       "images": {
-        "front": "/doors/m-4-front.webp",
-        "back": "/doors/m-4-back.webp",
-        "frontCard": "/doors/m-4-front-card.webp",
-        "backCard": "/doors/m-4-back-card.webp"
+        "front": "doors/m-4-front.webp",
+        "back": "doors/m-4-back.webp",
+        "frontCard": "doors/m-4-front-card.webp",
+        "backCard": "doors/m-4-back-card.webp"
       },
       "specs": {
         "material": "Толщина 83мм / с МДФ 92мм",
@@ -975,10 +975,10 @@
       ],
       "description": "Входная дверь «ЛИНИЯ»: полотно 80 мм / с МДФ 80мм, 2 контура. Снаружи — давление, Д-22 (Линии). Внутри — фрезерованная МДФ панель 6 мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/m-5-front.webp",
-        "back": "/doors/m-5-back.webp",
-        "frontCard": "/doors/m-5-front-card.webp",
-        "backCard": "/doors/m-5-back-card.webp"
+        "front": "doors/m-5-front.webp",
+        "back": "doors/m-5-back.webp",
+        "frontCard": "doors/m-5-front-card.webp",
+        "backCard": "doors/m-5-back-card.webp"
       },
       "specs": {
         "material": "Толщина 80 мм / с МДФ 80мм",
@@ -1076,10 +1076,10 @@
       "badges": [],
       "description": "Входная дверь «КЛАССИКА НОВА-М»: полотно 80мм / с МДФ 80мм, 2 контура. Снаружи — штамп, Шт-1 Классика 2кв/24. Внутри — фрезерованная МДФ панель 6 мм. Цвет - \"белый матовый\".",
       "images": {
-        "front": "/doors/m-6-front.webp",
-        "back": "/doors/m-6-back.webp",
-        "frontCard": "/doors/m-6-front-card.webp",
-        "backCard": "/doors/m-6-back-card.webp"
+        "front": "doors/m-6-front.webp",
+        "back": "doors/m-6-back.webp",
+        "frontCard": "doors/m-6-front-card.webp",
+        "backCard": "doors/m-6-back-card.webp"
       },
       "specs": {
         "material": "Толщина 80мм / с МДФ 80мм",
@@ -1179,10 +1179,10 @@
       ],
       "description": "Входная дверь «ЗЕРКАЛО МАКСИ»: полотно 83 мм/ с МДФ 86мм, 2 контура. Снаружи — атмосферостойкое. Цвет - \"Антик серебро\". Внутри — фрезерованная МДФ панель 10 мм, с зеркалом макси. Цвет - \"Белый матовый\". Съёмная панель.",
       "images": {
-        "front": "/doors/m-7-front.webp",
-        "back": "/doors/m-7-back.webp",
-        "frontCard": "/doors/m-7-front-card.webp",
-        "backCard": "/doors/m-7-back-card.webp"
+        "front": "doors/m-7-front.webp",
+        "back": "doors/m-7-back.webp",
+        "frontCard": "doors/m-7-front-card.webp",
+        "backCard": "doors/m-7-back-card.webp"
       },
       "specs": {
         "material": "Толщина 83 мм/ с МДФ 86мм",
@@ -1282,10 +1282,10 @@
       ],
       "description": "Входная дверь «ЕВА»: полотно 92мм / с МДФ 96мм, 3 контура. Снаружи — атмосферостойкое. Цвет - \"Антик серебро\". Внутри — фрезерованная МДФ панель 10 мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/md-8-front.webp",
-        "back": "/doors/md-8-back.webp",
-        "frontCard": "/doors/md-8-front-card.webp",
-        "backCard": "/doors/md-8-back-card.webp"
+        "front": "doors/md-8-front.webp",
+        "back": "doors/md-8-back.webp",
+        "frontCard": "doors/md-8-front-card.webp",
+        "backCard": "doors/md-8-back-card.webp"
       },
       "specs": {
         "material": "Толщина 92мм / с МДФ 96мм",
@@ -1383,10 +1383,10 @@
       "badges": [],
       "description": "Входная дверь «ВЕРТИКАЛЬ»: полотно 92мм / с МДФ 96мм, 3 контура. D-образный. Снаружи — атмосферостойкое. Цвет - Букле графит. Внутри — фрезерованная МДФ панель 10 мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/md-9-front.webp",
-        "back": "/doors/md-9-back.webp",
-        "frontCard": "/doors/md-9-front-card.webp",
-        "backCard": "/doors/md-9-back-card.webp"
+        "front": "doors/md-9-front.webp",
+        "back": "doors/md-9-back.webp",
+        "frontCard": "doors/md-9-front-card.webp",
+        "backCard": "doors/md-9-back-card.webp"
       },
       "specs": {
         "material": "Толщина 92мм / с МДФ 96мм",
@@ -1484,10 +1484,10 @@
       "badges": [],
       "description": "Входная дверь «СБ-ЛАЙН-3»: полотно 95мм / с МДФ 105мм, 3 контура. Снаружи — атмосферостойкое. Цвет - \"Букле графит\". Внутри — сборная МДФ панель 16 мм. Цвет - \"Граф белый\", черная лакобель. Съемная панель.",
       "images": {
-        "front": "/doors/md-10-front.webp",
-        "back": "/doors/md-10-back.webp",
-        "frontCard": "/doors/md-10-front-card.webp",
-        "backCard": "/doors/md-10-back-card.webp"
+        "front": "doors/md-10-front.webp",
+        "back": "doors/md-10-back.webp",
+        "frontCard": "doors/md-10-front-card.webp",
+        "backCard": "doors/md-10-back-card.webp"
       },
       "specs": {
         "material": "Толщина 95мм / с МДФ 105мм",
@@ -1585,10 +1585,10 @@
       "badges": [],
       "description": "Входная дверь «L-1F ЛИРА»: полотно 92мм / с МДФ 96мм, 3 контура. Снаружи — лазерная резка, вставка из нержавейки, L-1F. Внутри — МДФ панель, фрезерованная 10мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/md-11-front.webp",
-        "back": "/doors/md-11-back.webp",
-        "frontCard": "/doors/md-11-front-card.webp",
-        "backCard": "/doors/md-11-back-card.webp"
+        "front": "doors/md-11-front.webp",
+        "back": "doors/md-11-back.webp",
+        "frontCard": "doors/md-11-front-card.webp",
+        "backCard": "doors/md-11-back-card.webp"
       },
       "specs": {
         "material": "Толщина 92мм / с МДФ 96мм",
@@ -1686,10 +1686,10 @@
       "badges": [],
       "description": "Входная дверь «СИЦИЛИЯ МАКСИ»: полотно 95мм / с МДФ 100мм, 3 контура. Снаружи — лазерная резка. Внутри — сборная МДФ панель 10мм. Цвет - \"Белый матовый\", с зеркалом макси. Съемная панель.",
       "images": {
-        "front": "/doors/md-12-front.webp",
-        "back": "/doors/md-12-back.webp",
-        "frontCard": "/doors/md-12-front-card.webp",
-        "backCard": "/doors/md-12-back-card.webp"
+        "front": "doors/md-12-front.webp",
+        "back": "doors/md-12-back.webp",
+        "frontCard": "doors/md-12-front-card.webp",
+        "backCard": "doors/md-12-back-card.webp"
       },
       "specs": {
         "material": "Толщина 95мм / с МДФ 100мм",
@@ -1787,10 +1787,10 @@
       "badges": [],
       "description": "Входная дверь «КЛАССИКА АВЕО»: полотно 92мм / с МДФ 95мм, 3 контура. Снаружи — штамп, Шт-2 Классика 2кв/25. Внутри — фрезерованная МДФ панель 10мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/md-13-front.webp",
-        "back": "/doors/md-13-back.webp",
-        "frontCard": "/doors/md-13-front-card.webp",
-        "backCard": "/doors/md-13-back-card.webp"
+        "front": "doors/md-13-front.webp",
+        "back": "doors/md-13-back.webp",
+        "frontCard": "doors/md-13-front-card.webp",
+        "backCard": "doors/md-13-back-card.webp"
       },
       "specs": {
         "material": "Толщина 92мм / с МДФ 95мм",
@@ -1891,10 +1891,10 @@
       ],
       "description": "Входная дверь «ЗЕРКАЛО МАКСИ»: полотно 95мм / с МДФ 98мм, 3 контура. Снаружи — цвет - \"Антик Серебро\". Внутри — МДФ панель 10мм. Цвет - \"Белый матовый\", с зеркалом макси. Съемная панель.",
       "images": {
-        "front": "/doors/md-14-front.webp",
-        "back": "/doors/md-14-back.webp",
-        "frontCard": "/doors/md-14-front-card.webp",
-        "backCard": "/doors/md-14-back-card.webp"
+        "front": "doors/md-14-front.webp",
+        "back": "doors/md-14-back.webp",
+        "frontCard": "doors/md-14-front-card.webp",
+        "backCard": "doors/md-14-back-card.webp"
       },
       "specs": {
         "material": "Толщина 95мм / с МДФ 98мм",
@@ -1991,10 +1991,10 @@
       ],
       "description": "Входная дверь «ВЕСТА»: полотно 92мм / с МДФ 92мм, 3 контура. Снаружи — цвет - \"Антик Медь\". Внутри — МДФ панель 6мм. Цвет - \"Сосна белая\".",
       "images": {
-        "front": "/doors/md-15-front.webp",
-        "back": "/doors/md-15-back.webp",
-        "frontCard": "/doors/md-15-front-card.webp",
-        "backCard": "/doors/md-15-back-card.webp"
+        "front": "doors/md-15-front.webp",
+        "back": "doors/md-15-back.webp",
+        "frontCard": "doors/md-15-front-card.webp",
+        "backCard": "doors/md-15-back-card.webp"
       },
       "specs": {
         "material": "Толщина 92мм / с МДФ 92мм",
@@ -2090,10 +2090,10 @@
       ],
       "description": "Входная дверь «ГРИДЖ»: полотно 80мм / с МДФ 90мм, 2 контура. Снаружи — фрезерованная МДФ панель 10мм. Цвет \"черный эксимер\". Внутри — фрезерованная МДФ панель 6 мм, Цвет - \"грей шагрень\" 1025.",
       "images": {
-        "front": "/doors/mp-14-front.webp",
-        "back": "/doors/mp-14-back.webp",
-        "frontCard": "/doors/mp-14-front-card.webp",
-        "backCard": "/doors/mp-14-back-card.webp"
+        "front": "doors/mp-14-front.webp",
+        "back": "doors/mp-14-back.webp",
+        "frontCard": "doors/mp-14-front-card.webp",
+        "backCard": "doors/mp-14-back-card.webp"
       },
       "specs": {
         "material": "Толщина 80мм / с МДФ 90мм",
@@ -2191,10 +2191,10 @@
       "badges": [],
       "description": "Входная дверь «ФЬЮЖН»: полотно 80мм / с МДФ 85мм, 2 контура. Снаружи — фрезерованная МДФ панель 6мм. Цвет \"Графит\". Внутри — МДФ панель 6мм. Цвет - \"Белая матовая.",
       "images": {
-        "front": "/doors/mp-15-front.webp",
-        "back": "/doors/mp-15-back.webp",
-        "frontCard": "/doors/mp-15-front-card.webp",
-        "backCard": "/doors/mp-15-back-card.webp"
+        "front": "doors/mp-15-front.webp",
+        "back": "doors/mp-15-back.webp",
+        "frontCard": "doors/mp-15-front-card.webp",
+        "backCard": "doors/mp-15-back-card.webp"
       },
       "specs": {
         "material": "Толщина 80мм / с МДФ 85мм",
@@ -2292,10 +2292,10 @@
       "badges": [],
       "description": "Входная дверь «ГАБИ»: полотно 80мм / с МДФ 90мм, 2 контура. Снаружи — фрезерованная МДФ панель 10мм. Цвет \"Черная шагрень\" + вставки из лакобели. Внутри — фрезерованная МДФ панель 6 мм. Цвет - \"Грей шагрень\", со вставками из пластика.",
       "images": {
-        "front": "/doors/mp-16-front.webp",
-        "back": "/doors/mp-16-back.webp",
-        "frontCard": "/doors/mp-16-front-card.webp",
-        "backCard": "/doors/mp-16-back-card.webp"
+        "front": "doors/mp-16-front.webp",
+        "back": "doors/mp-16-back.webp",
+        "frontCard": "doors/mp-16-front-card.webp",
+        "backCard": "doors/mp-16-back-card.webp"
       },
       "specs": {
         "material": "Толщина 80мм / с МДФ 90мм",
@@ -2395,10 +2395,10 @@
       ],
       "description": "Входная дверь «ВАЛЛИ ЗЕРКАЛО»: полотно 83мм / с МДФ 95мм, 2 контура. Снаружи — фрезерованная МДФ панель 10мм. Цвет \"Черная шагрень\". Внутри — фрезерованная МДФ панель 10 мм. Цвет - \"Белый матовый\", с зеркалом макси.",
       "images": {
-        "front": "/doors/mp-17-front.webp",
-        "back": "/doors/mp-17-back.webp",
-        "frontCard": "/doors/mp-17-front-card.webp",
-        "backCard": "/doors/mp-17-back-card.webp"
+        "front": "doors/mp-17-front.webp",
+        "back": "doors/mp-17-back.webp",
+        "frontCard": "doors/mp-17-front-card.webp",
+        "backCard": "doors/mp-17-back-card.webp"
       },
       "specs": {
         "material": "Толщина 83мм / с МДФ 95мм",
@@ -2496,10 +2496,10 @@
       "badges": [],
       "description": "Входная дверь «СПИКА»: полотно 80мм / с МДФ 90мм, 2 контура. Снаружи — фрезерованная МДФ панель 10мм. Цвет \"Графит софт\" + Черный пластик. Внутри — гладкая МДФ панель 6 мм. Цвет - \"Белый матовый\" + Черный пластик.",
       "images": {
-        "front": "/doors/mp-18-front.webp",
-        "back": "/doors/mp-18-back.webp",
-        "frontCard": "/doors/mp-18-front-card.webp",
-        "backCard": "/doors/mp-18-back-card.webp"
+        "front": "doors/mp-18-front.webp",
+        "back": "doors/mp-18-back.webp",
+        "frontCard": "doors/mp-18-front-card.webp",
+        "backCard": "doors/mp-18-back-card.webp"
       },
       "specs": {
         "material": "Толщина 80мм / с МДФ 90мм",
@@ -2597,10 +2597,10 @@
       "badges": [],
       "description": "Входная дверь «ДИПЛОМАТ2»: полотно 92мм / с МДФ 105мм, 3 контура. Снаружи — фрезерованная МДФ панель 10мм. Цвет \"графит софт\". Внутри — фрезерованная МДФ панель 10 мм. Цвет - \"белая матовая\".",
       "images": {
-        "front": "/doors/mpp-19-front.webp",
-        "back": "/doors/mpp-19-back.webp",
-        "frontCard": "/doors/mpp-19-front-card.webp",
-        "backCard": "/doors/mpp-19-back-card.webp"
+        "front": "doors/mpp-19-front.webp",
+        "back": "doors/mpp-19-back.webp",
+        "frontCard": "doors/mpp-19-front-card.webp",
+        "backCard": "doors/mpp-19-back-card.webp"
       },
       "specs": {
         "material": "Толщина 92мм / с МДФ 105мм",
@@ -2698,10 +2698,10 @@
       "badges": [],
       "description": "Входная дверь «БУНКЕР МАКСИ»: полотно 95мм / с МДФ 108мм, 3 контура. Снаружи — фрезерованная 3х составная МДФ панель 10мм. Цвет \"черный эксимер\" + \"старое дерево\". Внутри — фрезерованная МДФ панель 10 мм зеркало макси. Цвет - \"Белая матовая\", Съёмная панель.",
       "images": {
-        "front": "/doors/mpp-20-front.webp",
-        "back": "/doors/mpp-20-back.webp",
-        "frontCard": "/doors/mpp-20-front-card.webp",
-        "backCard": "/doors/mpp-20-back-card.webp"
+        "front": "doors/mpp-20-front.webp",
+        "back": "doors/mpp-20-back.webp",
+        "frontCard": "doors/mpp-20-front-card.webp",
+        "backCard": "doors/mpp-20-back-card.webp"
       },
       "specs": {
         "material": "Толщина 95мм / с МДФ 108мм",
@@ -2799,10 +2799,10 @@
       "badges": [],
       "description": "Входная дверь «ТРЕВЛ»: полотно 92мм / с МДФ 105мм, 3 контура. Снаружи — фрезерованная МДФ панель 10мм. Цвет \"Черный эксимер\" + лакобель. Внутри — фрезерованная МДФ панель 10 мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/mpp-21-front.webp",
-        "back": "/doors/mpp-21-back.webp",
-        "frontCard": "/doors/mpp-21-front-card.webp",
-        "backCard": "/doors/mpp-21-back-card.webp"
+        "front": "doors/mpp-21-front.webp",
+        "back": "doors/mpp-21-back.webp",
+        "frontCard": "doors/mpp-21-front-card.webp",
+        "backCard": "doors/mpp-21-back-card.webp"
       },
       "specs": {
         "material": "Толщина 92мм / с МДФ 105мм",
@@ -2902,10 +2902,10 @@
       ],
       "description": "Входная дверь «СПИКА МЛ / АДАРА»: полотно 92мм / с МДФ 105мм, 3 контура. Снаружи — фрезерованная МДФ панель 10мм. 1. Цвет \"Черный эксимер\". 2. Цвет \"\"Орех каньон коньяк + Черный лакобель\". Внутри — фрезерованная МДФ панель 10 мм. Цвет - \"белая матовая\".",
       "images": {
-        "front": "/doors/mpp-22-front.webp",
-        "back": "/doors/mpp-22-back.webp",
-        "frontCard": "/doors/mpp-22-front-card.webp",
-        "backCard": "/doors/mpp-22-back-card.webp"
+        "front": "doors/mpp-22-front.webp",
+        "back": "doors/mpp-22-back.webp",
+        "frontCard": "doors/mpp-22-front-card.webp",
+        "backCard": "doors/mpp-22-back-card.webp"
       },
       "specs": {
         "material": "Толщина 92мм / с МДФ 105мм",
@@ -3003,10 +3003,10 @@
       "badges": [],
       "description": "Входная дверь «ПИКА ПАНОРАМА»: полотно 95мм / с МДФ 115мм, 3 контура. Снаружи — фрезерованная МДФ панель 16мм. Цвет \"Черный эксимер\" + \"Графит софт\", вставка - \"Черная лакобель\". Внутри — МДФ панель 16 мм, \"Панорама зеркало\". Цвет - \"Черный эксимер\". Съемная панель.",
       "images": {
-        "front": "/doors/mpp-23-front.webp",
-        "back": "/doors/mpp-23-back.webp",
-        "frontCard": "/doors/mpp-23-front-card.webp",
-        "backCard": "/doors/mpp-23-back-card.webp"
+        "front": "doors/mpp-23-front.webp",
+        "back": "doors/mpp-23-back.webp",
+        "frontCard": "doors/mpp-23-front-card.webp",
+        "backCard": "doors/mpp-23-back-card.webp"
       },
       "specs": {
         "material": "Толщина 95мм / с МДФ 115мм",
@@ -3104,10 +3104,10 @@
       "badges": [],
       "description": "Входная дверь «3D ИНФИНИТИ»: полотно 92мм / с МДФ 105мм, 3 контура. Снаружи — фрезерованная объемная МДФ панель 10мм+10мм. Цвет \"Черный эксимер\" + Вставка из сатированной нержавеющей стали. Внутри — фрезерованная МДФ панель 10 мм. Цвет - \"Белый матовый\" + вставка из нержавейки.",
       "images": {
-        "front": "/doors/mpp-24-front.webp",
-        "back": "/doors/mpp-24-back.webp",
-        "frontCard": "/doors/mpp-24-front-card.webp",
-        "backCard": "/doors/mpp-24-back-card.webp"
+        "front": "doors/mpp-24-front.webp",
+        "back": "doors/mpp-24-back.webp",
+        "frontCard": "doors/mpp-24-front-card.webp",
+        "backCard": "doors/mpp-24-back-card.webp"
       },
       "specs": {
         "material": "Толщина 92мм / с МДФ 105мм",
@@ -3205,10 +3205,10 @@
       "badges": [],
       "description": "Входная дверь «3D АДАМ»: полотно 92мм / с МДФ 105мм, 3 контура. Снаружи — фрезерованная объемная МДФ панель 10мм+10мм. Цвет \"Черный эксимер\". Внутри — фрезерованная МДФ панель 10 мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/mpp-25-front.webp",
-        "back": "/doors/mpp-25-back.webp",
-        "frontCard": "/doors/mpp-25-front-card.webp",
-        "backCard": "/doors/mpp-25-back-card.webp"
+        "front": "doors/mpp-25-front.webp",
+        "back": "doors/mpp-25-back.webp",
+        "frontCard": "doors/mpp-25-front-card.webp",
+        "backCard": "doors/mpp-25-back-card.webp"
       },
       "specs": {
         "material": "Толщина 92мм / с МДФ 105мм",
@@ -3308,10 +3308,10 @@
       ],
       "description": "Входная дверь «3D ТЕТРИС»: полотно 92мм / с МДФ 105мм, 3 контура. Снаружи — фрезерованная объемная МДФ панель 10мм+10мм. Цвет \"Черный эксимер\". Внутри — фрезерованная МДФ панель 10 мм. Цвет - \"Грей шагрень 1025\".",
       "images": {
-        "front": "/doors/mpp-26-front.webp",
-        "back": "/doors/mpp-26-back.webp",
-        "frontCard": "/doors/mpp-26-front-card.webp",
-        "backCard": "/doors/mpp-26-back-card.webp"
+        "front": "doors/mpp-26-front.webp",
+        "back": "doors/mpp-26-back.webp",
+        "frontCard": "doors/mpp-26-front-card.webp",
+        "backCard": "doors/mpp-26-back-card.webp"
       },
       "specs": {
         "material": "Толщина 92мм / с МДФ 105мм",
@@ -3411,10 +3411,10 @@
       ],
       "description": "Входная дверь «НЕКСТ»: полотно 92мм / с МДФ 105мм, 3 контура. Снаружи — фрезерованная МДФ панель 10мм. Цвет \"Черный эксимер\". Внутри — фрезерованная МДФ панель 10 мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/mpp-27-front.webp",
-        "back": "/doors/mpp-27-back.webp",
-        "frontCard": "/doors/mpp-27-front-card.webp",
-        "backCard": "/doors/mpp-27-back-card.webp"
+        "front": "doors/mpp-27-front.webp",
+        "back": "doors/mpp-27-back.webp",
+        "frontCard": "doors/mpp-27-front-card.webp",
+        "backCard": "doors/mpp-27-back-card.webp"
       },
       "specs": {
         "material": "Толщина 92мм / с МДФ 105мм",
@@ -3514,10 +3514,10 @@
       ],
       "description": "Входная дверь «ИНЬ-ЯНЬ»: полотно 92мм / с МДФ 105мм, 3 контура. Снаружи — фрезерованная Многоцветная МДФ панель 10мм. Цвет 1- \"Черный эксимер\", Цвет 2- \"Орех каньон коньяк\". Внутри — фрезерованная МДФ панель 10 мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/mpp-28-front.webp",
-        "back": "/doors/mpp-28-back.webp",
-        "frontCard": "/doors/mpp-28-front-card.webp",
-        "backCard": "/doors/mpp-28-back-card.webp"
+        "front": "doors/mpp-28-front.webp",
+        "back": "doors/mpp-28-back.webp",
+        "frontCard": "doors/mpp-28-front-card.webp",
+        "backCard": "doors/mpp-28-back-card.webp"
       },
       "specs": {
         "material": "Толщина 92мм / с МДФ 105мм",
@@ -3617,10 +3617,10 @@
       ],
       "description": "Входная дверь «ЛАЙН»: полотно 92мм / с МДФ 105мм, 3 контура. Снаружи — фрезерованная МДФ панель 10мм. Цвет - \"Орех каньон коньяк\". Внутри — фрезерованная МДФ панель 10 мм. Цвет - \"Астана Эш Уайт\".",
       "images": {
-        "front": "/doors/mpp-29-front.webp",
-        "back": "/doors/mpp-29-back.webp",
-        "frontCard": "/doors/mpp-29-front-card.webp",
-        "backCard": "/doors/mpp-29-back-card.webp"
+        "front": "doors/mpp-29-front.webp",
+        "back": "doors/mpp-29-back.webp",
+        "frontCard": "doors/mpp-29-front-card.webp",
+        "backCard": "doors/mpp-29-back-card.webp"
       },
       "specs": {
         "material": "Толщина 92мм / с МДФ 105мм",
@@ -3720,10 +3720,10 @@
       ],
       "description": "Входная дверь «ВАЛЛИ»: полотно 92мм / с МДФ 105мм, 3 контура. Снаружи — фрезерованная МДФ панель 10мм. Цвет - \"Эксимер черный\". Внутри — гладкая МДФ панель 10 мм, Пленка ПВХ под покраску.",
       "images": {
-        "front": "/doors/mpp-30-front.webp",
-        "back": "/doors/mpp-30-back.webp",
-        "frontCard": "/doors/mpp-30-front-card.webp",
-        "backCard": "/doors/mpp-30-back-card.webp"
+        "front": "doors/mpp-30-front.webp",
+        "back": "doors/mpp-30-back.webp",
+        "frontCard": "doors/mpp-30-front-card.webp",
+        "backCard": "doors/mpp-30-back-card.webp"
       },
       "specs": {
         "material": "Толщина 92мм / с МДФ 105мм",
@@ -3821,10 +3821,10 @@
       "badges": [],
       "description": "Входная дверь «ТЕРМО ЛИНИИ»: металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм/ с МДФ 114мм, 3 контура. Снаружи — давление, Д22 (Линии). Внутри — фрезерованная МДФ-панель 10мм. Цвет - \"Астана эшвайт\".",
       "images": {
-        "front": "/doors/mpt-24-front.webp",
-        "back": "/doors/mpt-24-back.webp",
-        "frontCard": "/doors/mpt-24-front-card.webp",
-        "backCard": "/doors/mpt-24-back-card.webp"
+        "front": "doors/mpt-24-front.webp",
+        "back": "doors/mpt-24-back.webp",
+        "frontCard": "doors/mpt-24-front-card.webp",
+        "backCard": "doors/mpt-24-back-card.webp"
       },
       "specs": {
         "material": "Металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм/ с МДФ 114мм",
@@ -3928,10 +3928,10 @@
       ],
       "description": "Входная дверь «ТЕРМО ВЕРТИКАЛЬ»: металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм/ с МДФ 114мм, 3 контура. Снаружи — давление, Д5 (Вертикаль). Внутри — фрезерованная МДФ-панель 10мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/mpt-25-front.webp",
-        "back": "/doors/mpt-25-back.webp",
-        "frontCard": "/doors/mpt-25-front-card.webp",
-        "backCard": "/doors/mpt-25-back-card.webp"
+        "front": "doors/mpt-25-front.webp",
+        "back": "doors/mpt-25-back.webp",
+        "frontCard": "doors/mpt-25-front-card.webp",
+        "backCard": "doors/mpt-25-back-card.webp"
       },
       "specs": {
         "material": "Металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм/ с МДФ 114мм",
@@ -4033,10 +4033,10 @@
       "badges": [],
       "description": "Входная дверь «ТЕРМО ДИПЛОМАТ»: металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм / с МДФ 114мм, 3 контура. Снаружи — атмосферостойкое. Цвет - \"Букле графит\". Внутри — фрезерованная МДФ-панель 10мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/mpt-26-front.webp",
-        "back": "/doors/mpt-26-back.webp",
-        "frontCard": "/doors/mpt-26-front-card.webp",
-        "backCard": "/doors/mpt-26-back-card.webp"
+        "front": "doors/mpt-26-front.webp",
+        "back": "doors/mpt-26-back.webp",
+        "frontCard": "doors/mpt-26-front-card.webp",
+        "backCard": "doors/mpt-26-back-card.webp"
       },
       "specs": {
         "material": "Металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм / с МДФ 114мм",
@@ -4134,10 +4134,10 @@
       "badges": [],
       "description": "Входная дверь «ТЕРМО ЛИРА»: металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм / с МДФ 114мм, 3 контура. Снаружи — штамп, Шт-3 Классика 3кв/24. Внутри — фрезерованная МДФ-панель 10мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/mpt-27-front.webp",
-        "back": "/doors/mpt-27-back.webp",
-        "frontCard": "/doors/mpt-27-front-card.webp",
-        "backCard": "/doors/mpt-27-back-card.webp"
+        "front": "doors/mpt-27-front.webp",
+        "back": "doors/mpt-27-back.webp",
+        "frontCard": "doors/mpt-27-front-card.webp",
+        "backCard": "doors/mpt-27-back-card.webp"
       },
       "specs": {
         "material": "Металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм / с МДФ 114мм",
@@ -4239,10 +4239,10 @@
       "badges": [],
       "description": "Входная дверь «ТЕРМО АВЕО»: металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм / с МДФ 114мм, 3 контура. Снаружи — штамп, ШТ-2 Классика 2кв/25. Внутри — фрезерованная МДФ-панель 10мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/mpt-28-front.webp",
-        "back": "/doors/mpt-28-back.webp",
-        "frontCard": "/doors/mpt-28-front-card.webp",
-        "backCard": "/doors/mpt-28-back-card.webp"
+        "front": "doors/mpt-28-front.webp",
+        "back": "doors/mpt-28-back.webp",
+        "frontCard": "doors/mpt-28-front-card.webp",
+        "backCard": "doors/mpt-28-back-card.webp"
       },
       "specs": {
         "material": "Металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм / с МДФ 114мм",
@@ -4344,10 +4344,10 @@
       "badges": [],
       "description": "Входная дверь «ТЕРМО ВАЛЛИ ВИНОРИТ»: металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм / с МДФ 124мм, 3 контура. Снаружи — фрезерованная МДФ панель 10мм . ПВХ цвет \"Грецкий орех\", патина + лак. Внутри — фрезерованная МДФ-панель 10мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/mpt-29-front.webp",
-        "back": "/doors/mpt-29-back.webp",
-        "frontCard": "/doors/mpt-29-front-card.webp",
-        "backCard": "/doors/mpt-29-back-card.webp"
+        "front": "doors/mpt-29-front.webp",
+        "back": "doors/mpt-29-back.webp",
+        "frontCard": "doors/mpt-29-front-card.webp",
+        "backCard": "doors/mpt-29-back-card.webp"
       },
       "specs": {
         "material": "Металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм / с МДФ 124мм",
@@ -4445,10 +4445,10 @@
       "badges": [],
       "description": "Входная дверь «ТЕРМО КЛАССИК ВИНОРИТ»: металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм / с МДФ 135мм, 3 контура. Снаружи — фрезерованная МДФ панель 16мм . ПВХ цвет \"Грецки орех\", патина + лак. Внутри — фрезерованная МДФ-панель 16мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/mpt-30-front.webp",
-        "back": "/doors/mpt-30-back.webp",
-        "frontCard": "/doors/mpt-30-front-card.webp",
-        "backCard": "/doors/mpt-30-back-card.webp"
+        "front": "doors/mpt-30-front.webp",
+        "back": "doors/mpt-30-back.webp",
+        "frontCard": "doors/mpt-30-front-card.webp",
+        "backCard": "doors/mpt-30-back-card.webp"
       },
       "specs": {
         "material": "Металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм / с МДФ 135мм",
@@ -4546,10 +4546,10 @@
       "badges": [],
       "description": "Входная дверь «ТЕРМО 3D АДАМ»: металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм / с МДФ 124мм, 3 контура. Снаружи — фрезерованная объемнаяМДФ панель 10мм+10мм. ПВХ уличный, цвет \"Графит\". Внутри — фрезерованная МДФ-панель 10мм. Цвет - \"Белый матовый\".",
       "images": {
-        "front": "/doors/mpt-31-front.webp",
-        "back": "/doors/mpt-31-back.webp",
-        "frontCard": "/doors/mpt-31-front-card.webp",
-        "backCard": "/doors/mpt-31-back-card.webp"
+        "front": "doors/mpt-31-front.webp",
+        "back": "doors/mpt-31-back.webp",
+        "frontCard": "doors/mpt-31-front-card.webp",
+        "backCard": "doors/mpt-31-back-card.webp"
       },
       "specs": {
         "material": "Металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм / с МДФ 124мм",
@@ -4650,10 +4650,10 @@
       ],
       "description": "Входная дверь «ТЕРМО СП ХАЙТЕК»: металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм/с МДФ 114мм, 3 контура. Снаружи — давление вертикальные полосы+Стеклопакет двухкамерный с ковкой, зеркальная тонировка, бронза. Внутри — фрезерованная МДФ-панель 10мм. Цвет - \"Белый матовый\"/Прижимная рамка белый муар.",
       "images": {
-        "front": "/doors/mpt-32-front.webp",
-        "back": "/doors/mpt-32-back.webp",
-        "frontCard": "/doors/mpt-32-front-card.webp",
-        "backCard": "/doors/mpt-32-back-card.webp"
+        "front": "doors/mpt-32-front.webp",
+        "back": "doors/mpt-32-back.webp",
+        "frontCard": "doors/mpt-32-front-card.webp",
+        "backCard": "doors/mpt-32-back-card.webp"
       },
       "specs": {
         "material": "Металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм/с МДФ 114мм",
@@ -4758,10 +4758,10 @@
       ],
       "description": "Входная дверь «ТЕРМО СП КЛАССИКА»: металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм/с МДФ 114мм, 3 контура. Снаружи — штамп, ШТ-2 Классика 2кв/25+Стеклопакет двухкамерный с ковкой, зеркальная тонировка, серебро. Внутри — фрезерованная МДФ-панель 10мм. Цвет - \"Белый матовый\"/Прижимная рамка белый муар.",
       "images": {
-        "front": "/doors/mpt-33-front.webp",
-        "back": "/doors/mpt-33-back.webp",
-        "frontCard": "/doors/mpt-33-front-card.webp",
-        "backCard": "/doors/mpt-33-back-card.webp"
+        "front": "doors/mpt-33-front.webp",
+        "back": "doors/mpt-33-back.webp",
+        "frontCard": "doors/mpt-33-front-card.webp",
+        "backCard": "doors/mpt-33-back-card.webp"
       },
       "specs": {
         "material": "Металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм/с МДФ 114мм",
@@ -4866,10 +4866,10 @@
       ],
       "description": "Входная дверь «ТЕРМО ТИГО»: металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм/с МДФ 114мм, 3 контура. Снаружи — цвет - \"Букле Шоколад\". Внутри — фрезерованная МДФ-панель 10мм. Цвет - \"Астана Эш Уайт\".",
       "images": {
-        "front": "/doors/mpt-34-front.webp",
-        "back": "/doors/mpt-34-back.webp",
-        "frontCard": "/doors/mpt-34-front-card.webp",
-        "backCard": "/doors/mpt-34-back-card.webp"
+        "front": "doors/mpt-34-front.webp",
+        "back": "doors/mpt-34-back.webp",
+        "frontCard": "doors/mpt-34-front-card.webp",
+        "backCard": "doors/mpt-34-back-card.webp"
       },
       "specs": {
         "material": "Металл 1.2мм. Терморазрыв ПВХ. Толщина 110мм/с МДФ 114мм",
@@ -4974,10 +4974,10 @@
       ],
       "description": "Входная дверь «ТЕРМО ЛАЙТ ТИГО»: вставной терморазрыв ПВХ. Толщина 110мм/с МДФ 110мм, 3 контура. Снаружи — цвет - \"Антик Серебро\". Внутри — фрезерованная МДФ-панель 6мм. Цвет - \"Грей шагрень».",
       "images": {
-        "front": "/doors/mpt-35-front.webp",
-        "back": "/doors/mpt-35-back.webp",
-        "frontCard": "/doors/mpt-35-front-card.webp",
-        "backCard": "/doors/mpt-35-back-card.webp"
+        "front": "doors/mpt-35-front.webp",
+        "back": "doors/mpt-35-back.webp",
+        "frontCard": "doors/mpt-35-front-card.webp",
+        "backCard": "doors/mpt-35-back-card.webp"
       },
       "specs": {
         "material": "Вставной терморазрыв ПВХ. Толщина 110мм/с МДФ 110мм",
@@ -5082,10 +5082,10 @@
       ],
       "description": "Входная дверь «ТЕРМО ЛАЙТ МЕТ/МЕТ»: вставной терморазрыв ПВХ. Толщина 110мм, 3 контура. Снаружи — цвет - \"Антик Серебро\". Внутри — лист металла.",
       "images": {
-        "front": "/doors/mpt-36-front.webp",
-        "back": "/doors/mpt-36-back.webp",
-        "frontCard": "/doors/mpt-36-front-card.webp",
-        "backCard": "/doors/mpt-36-back-card.webp"
+        "front": "doors/mpt-36-front.webp",
+        "back": "doors/mpt-36-back.webp",
+        "frontCard": "doors/mpt-36-front-card.webp",
+        "backCard": "doors/mpt-36-back-card.webp"
       },
       "specs": {
         "material": "Вставной терморазрыв ПВХ. Толщина 110мм",
@@ -5189,10 +5189,10 @@
       ],
       "description": "Входная дверь «ТЕРМО МЕТ/МЕТ АНТИК МЕДЬ»: терморазрыв ПВХ. Толщина 110мм, 3 контура. Снаружи — цвет - \"Антик медь». Внутри — лист металла.",
       "images": {
-        "front": "/doors/mpt-37-front.webp",
-        "back": "/doors/mpt-37-back.webp",
-        "frontCard": "/doors/mpt-37-front-card.webp",
-        "backCard": "/doors/mpt-37-back-card.webp"
+        "front": "doors/mpt-37-front.webp",
+        "back": "doors/mpt-37-back.webp",
+        "frontCard": "doors/mpt-37-front-card.webp",
+        "backCard": "doors/mpt-37-back-card.webp"
       },
       "specs": {
         "material": "Терморазрыв ПВХ. Толщина 110мм",
