@@ -1,5 +1,5 @@
 import { Container } from '@shared/ui'
-import { withBase } from '@shared/lib/withBase'
+// import { withBase } from '@shared/lib/withBase'
 import { CONTACTS, SITE } from '@shared/config/site'
 
 import styles from './SiteFooter.module.css'
@@ -20,13 +20,13 @@ export const SiteFooter = ({ onRequest }: SiteFooterProps) => (
     <Container>
       <div className={styles.top}>
         <div className={styles.brandBlock}>
-          <img
+          {/* <img
             src={withBase(SITE.logo)}
             alt={SITE.legalName}
             width={72}
             height={72}
             className={styles.logo}
-          />
+          /> */}
           <p className={styles.brand}>{SITE.legalName}</p>
           <p className={styles.tagline}>{SITE.tagline}</p>
         </div>

@@ -1,5 +1,5 @@
 import { Container } from '@shared/ui'
-import { withBase } from '@shared/lib/withBase'
+// import { withBase } from '@shared/lib/withBase'
 import { PRIMARY_CONTACT, SITE } from '@shared/config/site'
 
 import styles from './SiteHeader.module.css'
@@ -16,13 +16,13 @@ export const SiteHeader = ({ totalCount, onRequest }: SiteHeaderProps) => (
   <header className={styles.header}>
     <Container className={styles.inner}>
       <a href="#top" className={styles.brand}>
-        <img
+        {/* <img
           src={withBase(SITE.logo)}
           alt={SITE.legalName}
           width={40}
           height={40}
           className={styles.logo}
-        />
+        /> */}
         <span className={styles.wordmark}>{SITE.brand}</span>
       </a>
 
