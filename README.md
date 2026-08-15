@@ -22,8 +22,14 @@ parser/run.py
      └──► frontend/src/shared/api/catalog/doors.data.json
                    │
                    ▼
-            frontend (Vite) ──── POST /api/leads ───► backend ──SMTP──► почта
+            frontend (Vite build)
+                   │
+                   ▼
+          backend отдаёт сайт и принимает заявки ──SMTP──► почта
 ```
+
+На сервере оба слоя живут в одном процессе: Node раздаёт собранную статику
+и обрабатывает `POST /api/leads`. Поэтому один домен, один деплой и никакого CORS.
 
 ## Быстрый старт
 
@@ -91,23 +97,27 @@ npm run dev --prefix backend
 
 ## Публикация
 
-Витрина — статика, её можно положить куда угодно, в том числе на GitHub Pages:
+Сайт и API разворачиваются вместе, одним процессом Node на обычном VPS с
+Ubuntu. Пошаговая инструкция — в [DEPLOY.md](DEPLOY.md), там же готовые файлы
+`systemd` и nginx.
+
+Коротко: один раз настроить сервер
 
 ```bash
-npm run deploy --prefix frontend
+bash /tmp/deploy/setup-server.sh sk-pirs.ru
 ```
 
-Сайт публикуется в подкаталог домена, поэтому в `frontend/vite.config.ts`
-задан `base`. Если переедете на собственный домен в корень — поменяйте `base`
-на `'/'` и уберите `homepage` из `frontend/package.json`.
+и дальше обновлять сайт одной командой со своей машины:
 
-**Бэкенд на GitHub Pages работать не будет** — там только статика. Его нужно
-развернуть отдельно (VPS, Timeweb, Render, Railway), а фронтенд собрать с
-указанием адреса:
-
-```bash
-VITE_API_URL=https://адрес-бэкенда npm run build --prefix frontend
+```powershell
+.\deploy\deploy.ps1 -Server root@203.0.113.10
 ```
+
+Сборка идёт локально — серверу не нужны ни исходники, ни Python, ни PDF-каталог.
+
+> Статический хостинг вроде GitHub Pages для этого проекта не подходит: там
+> нет среды выполнения, а значит некому принять форму и обратиться к SMTP.
+> Пароль почты во фронтенд положить нельзя — он станет общедоступен.
 
 ## Структура
 
@@ -127,9 +137,16 @@ VITE_API_URL=https://адрес-бэкенда npm run build --prefix frontend
 ├── frontend/
 │   ├── public/doors/               выгрузка парсера (в git не хранится)
 │   └── src/                        FSD: app → pages → widgets → features → entities → shared
-└── backend/
-    ├── .env.example                шаблон конфигурации
-    └── src/                        Express + Nodemailer
+├── backend/
+│   ├── .env.example                шаблон конфигурации
+│   └── src/                        Express + Nodemailer + раздача статики
+├── deploy/
+│   ├── setup-server.sh             первичная настройка Ubuntu-сервера
+│   ├── deploy.ps1                  сборка и заливка одной командой
+│   ├── remote-install.sh           серверная половина заливки
+│   ├── pirs-catalog.service        юнит systemd
+│   └── nginx.conf                  конфигурация nginx
+└── DEPLOY.md                       пошаговая инструкция развёртывания
 ```
 
 Подробности — в README каждой части.

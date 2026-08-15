@@ -10,11 +10,11 @@ import { defineConfig } from 'vite'
 export default defineConfig({
   plugins: [react()],
   /**
-   * Сайт публикуется в подкаталог домена (GitHub Pages отдаёт его по адресу
-   * `/<репозиторий>/`). Если переедете на собственный домен в корень — поменяйте
-   * на '/' и заодно уберите `homepage` из package.json.
+   * Сайт отдаётся из корня домена: на сервере он и API живут вместе.
+   * Если когда-нибудь понадобится опубликовать его в подкаталог, поменяйте
+   * значение здесь — пути к картинкам подстроятся сами (см. `shared/lib/withBase`).
    */
-  base: '/MaestroDoors/',
+  base: '/',
   resolve: {
     alias: {
       '@app': fileURLToPath(new URL('./src/app', import.meta.url)),

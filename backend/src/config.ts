@@ -8,6 +8,8 @@
 
 import 'dotenv/config'
 
+import { DEFAULT_FRONTEND_DIST } from './static.js'
+
 class ConfigError extends Error {}
 
 const required = (name: string): string => {
@@ -44,6 +46,8 @@ export interface AppConfig {
   port: number
   /** Домены, которым разрешено обращаться к API. Пустой список — разрешить всем. */
   allowedOrigins: string[]
+  /** Каталог со сборкой фронтенда. Пусто — сайт не раздаётся, работает только API. */
+  frontendDist: string
   smtp: {
     host: string
     port: number
@@ -76,6 +80,7 @@ export const loadConfig = (): AppConfig => {
       .split(',')
       .map((origin) => origin.trim())
       .filter(Boolean),
+    frontendDist: optional('FRONTEND_DIST', DEFAULT_FRONTEND_DIST),
     smtp: {
       host: required('SMTP_HOST'),
       port: smtpPort,

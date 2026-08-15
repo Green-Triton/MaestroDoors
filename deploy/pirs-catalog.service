@@ -1,0 +1,51 @@
+# systemd-юнит для сайта ООО СК «Пирс».
+#
+# Установка:
+#   sudo cp deploy/pirs-catalog.service /etc/systemd/system/
+#   sudo systemctl daemon-reload
+#   sudo systemctl enable --now pirs-catalog
+#
+# Логи:      sudo journalctl -u pirs-catalog -f
+# Перезапуск: sudo systemctl restart pirs-catalog
+
+[Unit]
+Description=Каталог входных дверей ООО СК «Пирс»
+Documentation=file:///opt/pirs-catalog/DEPLOY.md
+# Ждём именно поднятую сеть, а не просто загрузку сетевой подсистемы:
+# без неё проверка SMTP при старте гарантированно не пройдёт.
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pirs
+Group=pirs
+
+# Переменные окружения приложение читает само из .env в этом каталоге
+# (через dotenv), поэтому EnvironmentFile здесь не нужен — и заодно не нужно
+# следить за расхождениями в правилах разбора между systemd и dotenv.
+WorkingDirectory=/opt/pirs-catalog/backend
+ExecStart=/usr/bin/node dist/index.js
+
+# Поднимать после падения, но не бесконечной чередой: пять неудач за минуту
+# означают поломку конфигурации, и её нужно видеть в статусе, а не в цикле.
+Restart=always
+RestartSec=5
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
+# Приложение ничего не пишет на диск, поэтому ограничения безопасные.
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=pirs-catalog
+
+[Install]
+WantedBy=multi-user.target

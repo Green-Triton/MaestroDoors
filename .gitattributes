@@ -1,0 +1,18 @@
+# Переводы строк.
+#
+# Скрипты для сервера обязаны храниться с LF: bash не выполнит файл, в котором
+# после shebang стоит CR, и ошибка при этом выглядит совершенно непонятно
+# («/usr/bin/env: 'bash\r': No such file or directory»). Git на Windows по
+# умолчанию переводит файлы в CRLF при выгрузке, поэтому закрепляем явно.
+*.sh            text eol=lf
+*.service       text eol=lf
+deploy/nginx.conf text eol=lf
+
+# PowerShell-скрипты, наоборот, нужны Windows-у в его виде.
+*.ps1           text eol=crlf
+
+# Двоичные файлы Git трогать не должен.
+*.png           binary
+*.webp          binary
+*.pdf           binary
+*.ico           binary

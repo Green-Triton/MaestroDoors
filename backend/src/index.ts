@@ -6,6 +6,7 @@ import express from 'express'
 import { ConfigError, loadConfig } from './config.js'
 import { Mailer } from './mailer.js'
 import { createLeadsRouter } from './routes/leads.js'
+import { mountFrontend } from './static.js'
 
 const start = async (): Promise<void> => {
   const config = loadConfig()
@@ -33,6 +34,10 @@ const start = async (): Promise<void> => {
 
   app.use('/api', createLeadsRouter(config, mailer))
 
+  // Сайт монтируется после API: его SPA-fallback отвечает на всё подряд и,
+  // стоя выше, перехватил бы обращения к /api.
+  const servesFrontend = mountFrontend(app, config.frontendDist)
+
   app.use((_req, res) => {
     res.status(404).json({ ok: false, message: 'Не найдено' })
   })
@@ -41,17 +46,21 @@ const start = async (): Promise<void> => {
   // почтовый провайдер сейчас недоступен.
   try {
     await mailer.verify()
-    console.log(`SMTP  : ${config.smtp.host}:${config.smtp.port} — соединение установлено`)
+    console.log(`SMTP    : ${config.smtp.host}:${config.smtp.port} — соединение установлено`)
   } catch (error) {
     console.warn(
-      'SMTP  : проверить соединение не удалось. Заявки будут падать, пока это не починится.',
+      'SMTP    : проверить соединение не удалось. Заявки будут падать, пока это не починится.',
     )
     console.warn(error instanceof Error ? error.message : error)
   }
 
   app.listen(config.port, () => {
-    console.log(`Сервер: http://localhost:${config.port}`)
-    console.log(`Заявки: ${config.mail.to}${config.mail.copyToSender ? ` (+ копия на ${config.smtp.user})` : ''}`)
+    console.log(`Сервер  : http://localhost:${config.port}`)
+    console.log(`Режим   : ${servesFrontend ? 'сайт + API' : 'только API'}`)
+    console.log(
+      `Заявки  : ${config.mail.to}` +
+        (config.mail.copyToSender ? ` (+ копия на ${config.smtp.user})` : ''),
+    )
   })
 }
 
