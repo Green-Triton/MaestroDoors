@@ -18,13 +18,20 @@ export interface DoorDetailsModalProps {
   door: Door | null
   collection?: DoorCollection
   onClose: () => void
+  /** Открыть форму заявки на эту модель. */
+  onRequest: (door: Door) => void
 }
 
 /**
  * The detail view: enlarged gallery on the left, full specification on the
  * right, call to action underneath.
  */
-export const DoorDetailsModal = ({ door, collection, onClose }: DoorDetailsModalProps) => {
+export const DoorDetailsModal = ({
+  door,
+  collection,
+  onClose,
+  onRequest,
+}: DoorDetailsModalProps) => {
   const { view, setView, reset } = useDoorView()
 
   // Every door opens on its exterior view, whichever side the visitor last
@@ -121,7 +128,7 @@ export const DoorDetailsModal = ({ door, collection, onClose }: DoorDetailsModal
             <DoorSpecList entries={door.specList} />
           </div>
 
-          <CTAButton door={door} className={styles.cta} />
+          <CTAButton onClick={() => onRequest(door)} className={styles.cta} />
         </section>
       </div>
     </Modal>

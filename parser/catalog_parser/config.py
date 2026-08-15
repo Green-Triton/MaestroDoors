@@ -1,9 +1,9 @@
-"""Configuration for the MaestroDoors catalogue extraction pipeline.
+"""Configuration for the catalogue extraction pipeline.
 
 Every tunable lives here so the pipeline modules stay free of magic numbers.
 Coordinates are expressed in PDF points (1 pt = 1/72 inch) and were derived
-from the CorelDRAW layout of "Каталог MaestroDoors ИЮЛЬ.pdf", which places
-every door on a strict two-row grid.
+from the CorelDRAW layout of the source catalogue, which places every door on
+a strict two-row grid.
 """
 
 from __future__ import annotations
@@ -17,7 +17,21 @@ from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-DEFAULT_PDF_PATH = PROJECT_ROOT / "Каталог MaestroDoors ИЮЛЬ.pdf"
+
+def find_source_pdf(root: Path = PROJECT_ROOT) -> Path:
+    """The catalogue PDF sitting in the project root.
+
+    Located by extension rather than by name so that renaming the file — or
+    dropping in next season's catalogue — does not require a code change. If
+    several PDFs are present the newest wins; pass ``--pdf`` to be explicit.
+    """
+    candidates = sorted(
+        root.glob("*.pdf"), key=lambda p: p.stat().st_mtime, reverse=True
+    )
+    return candidates[0] if candidates else root / "catalog.pdf"
+
+
+DEFAULT_PDF_PATH = find_source_pdf()
 
 #: Rendered product shots consumed by the frontend (served as static assets).
 DEFAULT_IMAGE_DIR = PROJECT_ROOT / "frontend" / "public" / "doors"
@@ -27,7 +41,13 @@ DEFAULT_DATA_PATH = (
     PROJECT_ROOT / "frontend" / "src" / "shared" / "api" / "catalog" / "doors.data.json"
 )
 
-#: Public URL prefix under which `DEFAULT_IMAGE_DIR` is served by Vite.
+#: Public URL prefix under which `DEFAULT_IMAGE_DIR` is served.
+#:
+#: Deliberately relative (no leading slash): the storefront is published into a
+#: subdirectory of the domain, and the frontend prepends the build's base path
+#: in `entities/door/api/catalogApi.ts`. A leading slash here would work too —
+#: that helper strips it — but relative keeps the dataset honest about not
+#: knowing where it will be hosted.
 PUBLIC_IMAGE_BASE = "doors"
 
 

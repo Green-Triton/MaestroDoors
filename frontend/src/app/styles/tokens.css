@@ -1,10 +1,9 @@
 /**
- * Design tokens.
+ * Дизайн-токены.
  *
- * The palette is lifted from the printed catalogue: the vector fills in
- * "Каталог MaestroDoors ИЮЛЬ.pdf" resolve to #fdb21e (brand amber), #5b5b5b
- * (heading grey), #2b2a29 (body graphite) and #ebecec (rule grey). The sand
- * tints are the neutral warm ground the brief asks for.
+ * Палитра снята с печатного каталога: заливки в исходном PDF дают #fdb21e
+ * (акцент), #5b5b5b (заголовки), #2b2a29 (основной текст) и #ebecec (линии).
+ * Песочные оттенки — тёплая нейтральная подложка.
  */
 
 :root {

@@ -1,0 +1,73 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.label {
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--c-ink-45);
+}
+
+.control {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 var(--sp-4);
+
+  font-size: var(--fs-base);
+  color: var(--c-ink);
+
+  background: var(--c-white);
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-sm);
+
+  transition:
+    border-color var(--dur) var(--ease),
+    background-color var(--dur) var(--ease);
+}
+
+.control::placeholder {
+  color: var(--c-ink-30);
+}
+
+.control:hover:not(:disabled) {
+  border-color: var(--c-ink-30);
+}
+
+.control:focus {
+  outline: none;
+  border-color: var(--c-ink);
+}
+
+.control:disabled {
+  background: var(--c-sand-50);
+  color: var(--c-ink-45);
+}
+
+.textarea {
+  min-height: 96px;
+  padding: var(--sp-3) var(--sp-4);
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.invalid {
+  border-color: #c0392b;
+}
+
+.invalid:focus {
+  border-color: #c0392b;
+}
+
+.message {
+  font-size: var(--fs-sm);
+  line-height: 1.4;
+  color: var(--c-ink-45);
+}
+
+.errorMessage {
+  color: #c0392b;
+}

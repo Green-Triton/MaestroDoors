@@ -13,8 +13,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from maestro_parser import extract  # noqa: E402
-from maestro_parser.config import (  # noqa: E402
+from catalog_parser import extract  # noqa: E402
+from catalog_parser.config import (  # noqa: E402
     DEFAULT_DATA_PATH,
     DEFAULT_IMAGE_DIR,
     DEFAULT_PDF_PATH,
@@ -23,7 +23,7 @@ from maestro_parser.config import (  # noqa: E402
 
 def main() -> int:
     parser = argparse.ArgumentParser(
-        prog="maestro-parser",
+        prog="catalog-parser",
         description="Извлекает изображения и характеристики дверей из PDF-каталога.",
     )
     parser.add_argument("--pdf", type=Path, default=DEFAULT_PDF_PATH, help="исходный каталог")

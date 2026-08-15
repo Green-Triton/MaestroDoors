@@ -4,11 +4,16 @@ import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
 /**
- * Path aliases mirror the Feature-Sliced Design layers so that an import
- * immediately tells you which layer it crosses into.
+ * Псевдонимы путей повторяют слои Feature-Sliced Design, поэтому по импорту
+ * сразу видно, в какой слой он уходит.
  */
 export default defineConfig({
   plugins: [react()],
+  /**
+   * Сайт публикуется в подкаталог домена (GitHub Pages отдаёт его по адресу
+   * `/<репозиторий>/`). Если переедете на собственный домен в корень — поменяйте
+   * на '/' и заодно уберите `homepage` из package.json.
+   */
   base: '/MaestroDoors/',
   resolve: {
     alias: {
@@ -23,5 +28,16 @@ export default defineConfig({
   server: {
     port: 5173,
     open: false,
+    /**
+     * В разработке форма заявки шлёт запрос на `/api/...` того же адреса,
+     * а прокси передаёт его бэкенду. Так фронтенду не нужен CORS и не нужно
+     * знать порт сервера. В продакшене адрес задаётся `VITE_API_URL`.
+     */
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3001',
+        changeOrigin: true,
+      },
+    },
   },
 })

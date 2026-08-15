@@ -1,8 +1,8 @@
 /**
  * Catalogue domain model.
  *
- * Mirrors the dataclasses in `parser/maestro_parser/models.py`. When the shape
- * changes, change both — the JSON is generated, not hand-written.
+ * Повторяет dataclasses из `parser/catalog_parser/models.py`. Меняете форму —
+ * меняйте в обоих местах: JSON генерируется, а не пишется руками.
  */
 
 /** Which side of the door is on screen. */

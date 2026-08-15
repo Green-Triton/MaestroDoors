@@ -1,41 +1,67 @@
 import { Container } from '@shared/ui'
-// import { CONTACTS, SITE } from '@shared/config/site'
-import { SITE } from '@shared/config/site'
-
+import { withBase } from '@shared/lib/withBase'
+import { CONTACTS, SITE } from '@shared/config/site'
 
 import styles from './SiteFooter.module.css'
 
 export interface SiteFooterProps {
-  /** Source catalogue filename, shown as provenance. */
-  source: string
+  /** Открыть форму заявки без привязки к конкретной модели. */
+  onRequest: () => void
 }
 
-/** Contacts transcribed from the back cover of the printed catalogue. */
-export const SiteFooter = ({ source }: SiteFooterProps) => (
+/**
+ * Подвал: реквизиты и связь.
+ *
+ * Блок контактов появляется сам, как только в `CONTACTS` окажется хотя бы одна
+ * запись; пока список пуст, вместо него показывается кнопка заявки.
+ */
+export const SiteFooter = ({ onRequest }: SiteFooterProps) => (
   <footer className={styles.footer} id="contacts">
     <Container>
       <div className={styles.top}>
         <div className={styles.brandBlock}>
-          <p className={styles.brand}>{SITE.brand}</p>
+          <img
+            src={withBase(SITE.logo)}
+            alt={SITE.legalName}
+            width={72}
+            height={72}
+            className={styles.logo}
+          />
+          <p className={styles.brand}>{SITE.legalName}</p>
           <p className={styles.tagline}>{SITE.tagline}</p>
         </div>
 
-        {/* <ul className={styles.contacts}>
-          {CONTACTS.map((contact) => (
-            <li key={contact.href} className={styles.contact}>
-              <span className={styles.role}>{contact.role}</span>
-              <a href={contact.href} className={styles.phone}>
-                {contact.phone}
-              </a>
-              <span className={styles.name}>{contact.name}</span>
-            </li>
-          ))}
-        </ul> */}
+        {CONTACTS.length > 0 ? (
+          <ul className={styles.contacts}>
+            {CONTACTS.map((contact) => (
+              <li key={contact.href} className={styles.contact}>
+                <span className={styles.role}>{contact.role}</span>
+                <a href={contact.href} className={styles.phone}>
+                  {contact.phone}
+                </a>
+                <span className={styles.name}>{contact.name}</span>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div className={styles.callout}>
+            <p className={styles.calloutTitle}>Подберём модель под ваш проём</p>
+            <p className={styles.calloutText}>
+              Оставьте заявку — уточним размеры, комплектацию и сроки,
+              рассчитаем стоимость.
+            </p>
+            <button type="button" className={styles.calloutButton} onClick={onRequest}>
+              Оставить заявку
+            </button>
+          </div>
+        )}
       </div>
 
       <div className={styles.bottom}>
-        <p>© {new Date().getFullYear()} {SITE.brand}</p>
-        <p className={styles.source}>Данные и изображения из каталога «{source}»</p>
+        <p>
+          © {new Date().getFullYear()} {SITE.legalName}
+        </p>
+        <p className={styles.note}>Все права защищены</p>
       </div>
     </Container>
   </footer>

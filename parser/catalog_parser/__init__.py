@@ -1,6 +1,6 @@
-"""MaestroDoors catalogue extraction pipeline.
+"""Catalogue extraction pipeline.
 
-Turns "Каталог MaestroDoors ИЮЛЬ.pdf" into the two artefacts the storefront
+Turns the printed door catalogue (PDF) into the two artefacts the storefront
 needs: composited product shots and a structured catalogue dataset.
 """
 

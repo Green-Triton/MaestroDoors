@@ -10,6 +10,9 @@ export type { ContainerProps } from './Container/Container'
 export { Modal } from './Modal/Modal'
 export type { ModalProps } from './Modal/Modal'
 
+export { TextField } from './TextField/TextField'
+export type { TextAreaFieldProps, TextFieldProps } from './TextField/TextField'
+
 export { SegmentedControl } from './SegmentedControl/SegmentedControl'
 export type {
   SegmentedControlProps,

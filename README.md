@@ -1,52 +1,77 @@
-# MaestroDoors — каталог входных дверей
+# ООО СК «Пирс» — каталог входных дверей
 
-Одностраничный сайт-каталог, целиком построенный на данных из
-`Каталог MaestroDoors ИЮЛЬ.pdf`. Проект состоит из двух независимых частей:
+Одностраничный сайт-каталог, построенный на данных из печатного PDF-каталога.
+Проект состоит из трёх частей:
 
 | Директория | Что делает | Стек |
 |---|---|---|
 | [`parser/`](parser/) | Достаёт из PDF изображения дверей и характеристики, отдаёт готовый датасет | Python 3.13, PyMuPDF, Pillow |
 | [`frontend/`](frontend/) | Витрина каталога | React 19, TypeScript, Vite, FSD |
+| [`backend/`](backend/) | Приём заявок и отправка их по SMTP | Node.js, Express, Nodemailer |
 
 Парсер — источник правды. Фронтенд ничего не выдумывает: и картинки,
 и характеристики он получает из его выгрузки.
 
 ```
-Каталог MaestroDoors ИЮЛЬ.pdf
-            │
-            ▼
-      parser/run.py
-            │
-            ├──► frontend/public/doors/*.webp                 (205 файлов)
-            └──► frontend/src/shared/api/catalog/doors.data.json
-                          │
-                          ▼
-                   frontend (Vite)
+каталог.pdf
+     │
+     ▼
+parser/run.py
+     │
+     ├──► frontend/public/doors/*.webp                 (205 файлов)
+     └──► frontend/src/shared/api/catalog/doors.data.json
+                   │
+                   ▼
+            frontend (Vite) ──── POST /api/leads ───► backend ──SMTP──► почта
 ```
 
 ## Быстрый старт
 
+**1. Данные из каталога** (нужно один раз, пока не сменится PDF):
+
 ```bash
-python -m venv venv && venv\Scripts\pip install -r parser/requirements.txt
+python -m venv venv
 ```
 
-Собрать данные и изображения из PDF:
+```bash
+venv\Scripts\pip install -r parser\requirements.txt
+```
 
 ```bash
 venv\Scripts\python parser\run.py
 ```
 
-Запустить витрину:
+PDF ищется по расширению в корне проекта — переименовывать файл не нужно.
+
+**2. Витрина:**
 
 ```bash
 npm install --prefix frontend && npm run dev --prefix frontend
 ```
 
-Сайт поднимется на <http://localhost:5173>.
+Откроется на <http://localhost:5173>.
+
+**3. Приём заявок** (нужен, только чтобы форма реально отправляла письма):
+
+```bash
+npm install --prefix backend
+```
+
+Скопируйте `backend/.env.example` в `backend/.env`, заполните `SMTP_USER` и
+`SMTP_PASS` — как получить пароль приложения, написано в
+[`backend/README.md`](backend/README.md#пароль-приложения-gmail). Затем:
+
+```bash
+npm run dev --prefix backend
+```
+
+В разработке фронтенд шлёт заявки на `/api/...` того же адреса, а Vite
+проксирует их на `localhost:3001`. Без запущенного бэкенда сайт работает,
+но форма покажет ошибку связи.
 
 ## Что получилось из каталога
 
-- **51 модель** на 27 страницах каталога (стр. 2–28);
+- **51 модель** на 27 страницах каталога;
 - **7 коллекций**: 6/7/8/9,5 см МЕТ/МДФ, 8,5 и 10,5 см МДФ/МДФ, серия с терморазрывом;
 - **2 вида** у каждой модели — снаружи и внутри;
 - **18–19 характеристик** на модель, включая замки, фурнитуру и размеры;
@@ -64,33 +89,52 @@ npm install --prefix frontend && npm run dev --prefix frontend
 сам собирает все слои — и приводит оба вида к общей геометрии. Поэтому в карточке
 дверь при переключении не «прыгает».
 
-Старый скрипт сохранён в [`parser/legacy/parser_v1.py`](parser/legacy/parser_v1.py)
-как справка, в работе не участвует.
+## Публикация
+
+Витрина — статика, её можно положить куда угодно, в том числе на GitHub Pages:
+
+```bash
+npm run deploy --prefix frontend
+```
+
+Сайт публикуется в подкаталог домена, поэтому в `frontend/vite.config.ts`
+задан `base`. Если переедете на собственный домен в корень — поменяйте `base`
+на `'/'` и уберите `homepage` из `frontend/package.json`.
+
+**Бэкенд на GitHub Pages работать не будет** — там только статика. Его нужно
+развернуть отдельно (VPS, Timeweb, Render, Railway), а фронтенд собрать с
+указанием адреса:
+
+```bash
+VITE_API_URL=https://адрес-бэкенда npm run build --prefix frontend
+```
 
 ## Структура
 
 ```
-MaestroDoors/
-├── Каталог MaestroDoors ИЮЛЬ.pdf   исходник, источник правды
+.
+├── каталог.pdf                     исходник, источник правды (в git не хранится)
 ├── parser/
 │   ├── run.py                      CLI
-│   ├── requirements.txt
 │   ├── legacy/parser_v1.py         первая версия, не используется
-│   └── maestro_parser/
+│   └── catalog_parser/
 │       ├── config.py               все настройки и константы вёрстки
 │       ├── models.py               доменные объекты
 │       ├── layout.py               поиск слотов дверей на странице
 │       ├── text_parser.py          разбор заголовков и характеристик
 │       ├── image_extractor.py      растрирование и экспорт
 │       └── pipeline.py             оркестрация
-└── frontend/
-    ├── public/doors/               выгрузка парсера (в git не хранится)
-    └── src/                        FSD: app → pages → widgets → features → entities → shared
+├── frontend/
+│   ├── public/doors/               выгрузка парсера (в git не хранится)
+│   └── src/                        FSD: app → pages → widgets → features → entities → shared
+└── backend/
+    ├── .env.example                шаблон конфигурации
+    └── src/                        Express + Nodemailer
 ```
 
 Подробности — в README каждой части.
 
-## Лицензия и данные
+## Данные
 
-Изображения и характеристики принадлежат MaestroDoors и взяты из фирменного
-каталога. Репозиторий предназначен для разработки витрины.
+Изображения и характеристики взяты из фирменного каталога и принадлежат
+правообладателю. Репозиторий предназначен для разработки витрины.

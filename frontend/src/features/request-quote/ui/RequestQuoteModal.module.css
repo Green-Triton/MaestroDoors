@@ -1,0 +1,120 @@
+.panel {
+  width: min(520px, 100%);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  padding: var(--sp-7) var(--sp-6) var(--sp-6);
+}
+
+.header {
+  /* Оставляем место под кнопку закрытия в углу. */
+  padding-right: var(--sp-7);
+}
+
+.title {
+  font-size: var(--fs-xl);
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-base);
+  color: var(--c-ink-45);
+  text-wrap: pretty;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+/**
+ * Ловушка для ботов. Скрываем так, чтобы поле осталось в потоке документа:
+ * `display: none` и `hidden` многие боты распознают и пропускают.
+ */
+.trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.formError {
+  padding: var(--sp-3) var(--sp-4);
+  font-size: var(--fs-sm);
+  line-height: 1.45;
+  color: #8c2c20;
+  background: #fdf3f1;
+  border: 1px solid #f0d3ce;
+  border-radius: var(--radius-sm);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.consent {
+  font-size: var(--fs-xs);
+  line-height: 1.45;
+  color: var(--c-ink-45);
+  text-align: center;
+}
+
+/* ---- Экран после отправки -------------------------------------------- */
+
+.done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  padding: var(--sp-8) var(--sp-6);
+  text-align: center;
+}
+
+.doneMark {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  color: var(--c-ink);
+  background: var(--c-accent);
+  border-radius: 50%;
+}
+
+.doneTitle {
+  font-size: var(--fs-xl);
+}
+
+.doneText {
+  max-width: 30rem;
+  color: var(--c-ink-70);
+  text-wrap: pretty;
+}
+
+.donePhone {
+  color: var(--c-ink);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+@media (max-width: 519px) {
+  .form {
+    padding: var(--sp-6) var(--sp-5);
+  }
+
+  .title {
+    font-size: var(--fs-lg);
+  }
+
+  .done {
+    padding: var(--sp-7) var(--sp-5);
+  }
+}

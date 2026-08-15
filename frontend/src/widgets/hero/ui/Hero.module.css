@@ -52,6 +52,15 @@
   text-wrap: pretty;
 }
 
+.company {
+  margin-top: var(--sp-4);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--c-ink-45);
+}
+
 .stats {
   display: flex;
   flex-wrap: wrap;

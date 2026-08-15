@@ -1,0 +1,7 @@
+node_modules/
+dist/
+
+# Секреты SMTP. Шаблон — в .env.example
+.env
+.env.*
+!.env.example

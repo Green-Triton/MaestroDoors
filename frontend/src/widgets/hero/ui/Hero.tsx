@@ -9,7 +9,7 @@ export interface HeroProps {
   collectionCount: number
 }
 
-/** Opening screen: catalogue title, a line of figures, the cover photograph. */
+/** Первый экран: название каталога, цифры, интерьерная фотография. */
 export const Hero = ({ cover, doorCount, collectionCount }: HeroProps) => (
   <section className={styles.hero} id="top">
     <Container className={styles.inner}>
@@ -20,6 +20,7 @@ export const Hero = ({ cover, doorCount, collectionCount }: HeroProps) => (
           Металлические и МДФ-двери, модели с терморазрывом. Полная спецификация
           каждой модели — из заводского каталога, без сокращений.
         </p>
+        <p className={styles.company}>{SITE.legalName}</p>
 
         <dl className={styles.stats}>
           <div className={styles.stat}>
@@ -54,7 +55,7 @@ export const Hero = ({ cover, doorCount, collectionCount }: HeroProps) => (
         <figure className={styles.figure}>
           <img
             src={cover}
-            alt="Входная дверь MaestroDoors в интерьере"
+            alt="Входная дверь в интерьере"
             width={1400}
             height={1742}
             fetchPriority="high"

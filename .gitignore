@@ -8,6 +8,13 @@ __pycache__/
 
 # Node (см. также frontend/.gitignore)
 node_modules/
+dist/
+
+# Секреты: пароли SMTP и прочие ключи. В репозиторий попадать не должны —
+# шаблон лежит рядом в backend/.env.example
+.env
+.env.*
+!.env.example
 
 # Артефакты парсера — пересобираются командой `python parser/run.py`
 output/

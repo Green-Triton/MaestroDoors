@@ -7,14 +7,22 @@
 
 .top {
   display: grid;
-  grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   gap: var(--sp-7);
   padding-bottom: var(--sp-7);
 }
 
+.logo {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: var(--radius);
+  margin-bottom: var(--sp-4);
+}
+
 .brand {
   font-size: var(--fs-lg);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: var(--tracking-wide);
 }
 
@@ -34,6 +42,8 @@
   text-transform: uppercase;
   color: var(--c-ink-45);
 }
+
+/* ---- Контакты (появляются, когда список заполнен) --------------------- */
 
 .contacts {
   display: grid;
@@ -73,6 +83,58 @@
   color: var(--c-ink-70);
 }
 
+/* ---- Призыв к заявке (пока контактов нет) ----------------------------- */
+
+.callout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding-top: var(--sp-4);
+  border-top: 1px solid var(--c-line);
+}
+
+.calloutTitle {
+  font-size: var(--fs-lg);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+.calloutText {
+  max-width: 34rem;
+  font-size: var(--fs-base);
+  color: var(--c-ink-45);
+  text-wrap: pretty;
+}
+
+.calloutButton {
+  display: inline-flex;
+  align-items: center;
+  min-height: 48px;
+  margin-top: var(--sp-2);
+  padding: 0 var(--sp-6);
+
+  color: var(--c-white);
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+
+  background: var(--c-ink);
+  border-radius: var(--radius-sm);
+
+  transition:
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+
+.calloutButton:hover {
+  background: var(--c-accent);
+  color: var(--c-ink);
+}
+
+/* ---- Нижняя строка ---------------------------------------------------- */
+
 .bottom {
   display: flex;
   flex-wrap: wrap;
@@ -85,7 +147,7 @@
   color: var(--c-ink-45);
 }
 
-.source {
+.note {
   text-align: right;
 }
 
@@ -100,7 +162,7 @@
     gap: var(--sp-4);
   }
 
-  .source {
+  .note {
     text-align: left;
   }
 }

@@ -6,11 +6,11 @@ import {
   doorCollections,
   doorsData,
   filterByCollection,
-  getCatalog,
   type CollectionFilter as CollectionFilterValue,
   type Door,
 } from '@entities/door'
 import { CollectionFilter } from '@features/filter-doors'
+import { RequestQuoteModal } from '@features/request-quote'
 import { Container } from '@shared/ui'
 import { CatalogGrid } from '@widgets/catalog-grid'
 import { DoorDetailsModal } from '@widgets/door-details-modal'
@@ -21,16 +21,19 @@ import { SiteHeader } from '@widgets/site-header'
 import styles from './CatalogPage.module.css'
 
 /**
- * The single page of the storefront.
+ * Единственная страница витрины.
  *
- * It owns the two pieces of state that cross widget boundaries — the active
- * collection and the door being inspected — and passes everything else down.
+ * Здесь живёт состояние, которое пересекает границы виджетов: выбранная
+ * коллекция, открытая модель и форма заявки. Всё остальное передаётся вниз
+ * пропсами.
  */
 export const CatalogPage = () => {
   const [collectionId, setCollectionId] = useState<CollectionFilterValue>(ALL_COLLECTIONS)
   const [activeDoor, setActiveDoor] = useState<Door | null>(null)
+  const [requestOpen, setRequestOpen] = useState(false)
+  /** Модель, из карточки которой открыли форму; `null` — общая заявка. */
+  const [requestDoor, setRequestDoor] = useState<Door | null>(null)
 
-  const catalog = getCatalog()
   const visibleDoors = useMemo(
     () => filterByCollection(doorsData, collectionId),
     [collectionId],
@@ -43,9 +46,14 @@ export const CatalogPage = () => {
     (collection) => collection.id === collectionId,
   )
 
+  const openRequest = (door: Door | null) => {
+    setRequestDoor(door)
+    setRequestOpen(true)
+  }
+
   return (
     <>
-      <SiteHeader totalCount={doorsData.length} />
+      <SiteHeader totalCount={doorsData.length} onRequest={() => openRequest(null)} />
 
       <main>
         <Hero
@@ -85,12 +93,19 @@ export const CatalogPage = () => {
         </section>
       </main>
 
-      <SiteFooter source={catalog.source} />
+      <SiteFooter onRequest={() => openRequest(null)} />
 
       <DoorDetailsModal
         door={activeDoor}
         collection={activeCollection}
         onClose={() => setActiveDoor(null)}
+        onRequest={openRequest}
+      />
+
+      <RequestQuoteModal
+        open={requestOpen}
+        door={requestDoor}
+        onClose={() => setRequestOpen(false)}
       />
     </>
   )

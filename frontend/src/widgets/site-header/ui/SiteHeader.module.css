@@ -24,14 +24,23 @@
   color: var(--c-ink);
 }
 
-.mark {
+/**
+ * У логотипа собственная непрозрачная подложка, поэтому он показывается
+ * плиткой: вытравить фон нельзя — по краям букв останется ореол.
+ */
+.logo {
   flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: var(--radius);
 }
 
 .wordmark {
   font-size: var(--fs-md);
   font-weight: 600;
   letter-spacing: var(--tracking-wide);
+  white-space: nowrap;
 }
 
 .nav {
@@ -63,6 +72,12 @@
   color: var(--c-ink-30);
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+}
+
 .phone {
   font-size: var(--fs-sm);
   font-variant-numeric: tabular-nums;
@@ -74,6 +89,32 @@
   color: var(--c-accent-deep);
 }
 
+.cta {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 var(--sp-5);
+
+  color: var(--c-white);
+  font-size: var(--fs-xs);
+  font-weight: 500;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  background: var(--c-ink);
+  border-radius: var(--radius-sm);
+
+  transition:
+    background-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+}
+
+.cta:hover {
+  background: var(--c-accent);
+  color: var(--c-ink);
+}
+
 @media (max-width: 899px) {
   .nav {
     display: none;
@@ -81,11 +122,21 @@
 }
 
 @media (max-width: 519px) {
-  .wordmark {
-    font-size: var(--fs-base);
+  .inner {
+    gap: var(--sp-3);
   }
 
-  .phone {
-    font-size: var(--fs-xs);
+  .logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .wordmark {
+    font-size: var(--fs-sm);
+  }
+
+  .cta {
+    min-height: 36px;
+    padding: 0 var(--sp-3);
   }
 }

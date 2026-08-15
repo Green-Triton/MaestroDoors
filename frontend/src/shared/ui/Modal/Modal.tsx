@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
 
+import { cn } from '@shared/lib/cn'
 import { useLockBodyScroll } from '@shared/lib/useLockBodyScroll'
 
 import styles from './Modal.module.css'
@@ -10,6 +11,13 @@ export interface ModalProps {
   onClose: () => void
   /** Labels the dialog for assistive technology. */
   title: string
+  /**
+   * `top` поднимает окно над уже открытым: форма заявки вызывается из
+   * карточки товара, которая сама показана в модальном окне.
+   */
+  layer?: 'base' | 'top'
+  /** Дополнительный класс панели — например, чтобы задать свою ширину. */
+  className?: string
   children: ReactNode
 }
 
@@ -24,7 +32,14 @@ const FOCUSABLE =
  * open and back to the trigger on close, Tab is trapped inside, and Escape or a
  * click on the backdrop dismisses it.
  */
-export const Modal = ({ open, onClose, title, children }: ModalProps) => {
+export const Modal = ({
+  open,
+  onClose,
+  title,
+  layer = 'base',
+  className,
+  children,
+}: ModalProps) => {
   const panelRef = useRef<HTMLDivElement>(null)
   const restoreFocusRef = useRef<HTMLElement | null>(null)
 
@@ -79,7 +94,7 @@ export const Modal = ({ open, onClose, title, children }: ModalProps) => {
 
   return createPortal(
     <div
-      className={styles.overlay}
+      className={cn(styles.overlay, layer === 'top' && styles.overlayTop)}
       onMouseDown={(event) => {
         // Only a press that both starts and ends on the backdrop closes the
         // dialog — otherwise a text selection that drifts outside would too.
@@ -92,7 +107,7 @@ export const Modal = ({ open, onClose, title, children }: ModalProps) => {
         aria-modal="true"
         aria-label={title}
         tabIndex={-1}
-        className={styles.panel}
+        className={cn(styles.panel, className)}
         onKeyDown={handleKeyDown}
       >
         <button type="button" className={styles.close} onClick={onClose} aria-label="Закрыть">

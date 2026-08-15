@@ -3,22 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Каталог входных дверей MaestroDoors: металлические и МДФ двери, модели с терморазрывом. Полные характеристики каждой модели."
-    />
-    <meta name="theme-color" content="#ffffff" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <title>MaestroDoors — каталог входных дверей</title>
+    <meta name="robots" content="noindex" />
+    <title>Страница не найдена — ООО СК «Пирс»</title>
+    <!--
+      GitHub Pages отдаёт этот файл на неизвестных путях. Сайт одностраничный,
+      поэтому здесь достаточно вернуть посетителя на главную. Базовый путь
+      берётся из адреса: /<repo>/что-угодно -> /<repo>/
+    -->
+    <script>
+      var segments = location.pathname.split('/').filter(Boolean)
+      var base = segments.length > 1 ? '/' + segments[0] + '/' : '/'
+      location.replace(base)
+    </script>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #fbfaf8;
+        color: #2b2a29;
+        font-family: 'Jost', 'Segoe UI', system-ui, sans-serif;
+      }
+    </style>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/app/main.tsx"></script>
+    <p>Страница не найдена. Возвращаемся в каталог…</p>
   </body>
 </html>

@@ -1,9 +1,18 @@
+"""АРХИВ. Первая версия парсера, в сборке не участвует.
+
+Оставлена как история: именно её ограничения (составные двери, маски
+прозрачности в соседних объектах, разное кадрирование двух видов) описаны
+в parser/README.md и привели к текущей реализации в catalog_parser/.
+
+Рабочая версия — `python parser/run.py`.
+"""
+
 """ first version """
 
 # import fitz  # PyMuPDF
 # import os
 
-# pdf_path = "Каталог MaestroDoors ИЮЛЬ.pdf"
+# pdf_path = "catalog.pdf"
 # output_dir = "output"
 
 # os.makedirs(output_dir, exist_ok=True)
@@ -60,7 +69,7 @@
 import fitz  # PyMuPDF
 import os
 
-pdf_path = "Каталог MaestroDoors ИЮЛЬ.pdf"
+pdf_path = "catalog.pdf"
 output_dir = "output"
 
 os.makedirs(output_dir, exist_ok=True)

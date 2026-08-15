@@ -1,10 +1,11 @@
 {
-  "name": "maestrodoors-catalog",
+  "name": "pirs-catalog-frontend",
   "private": true,
   "version": "1.0.0",
+  "//homepage": "Адрес публикации на GitHub Pages. Здесь стоит имя репозитория — переименуете репозиторий, поправьте и `base` в vite.config.ts.",
   "homepage": "https://Green-Triton.github.io/MaestroDoors",
   "type": "module",
-  "description": "Каталог входных дверей MaestroDoors",
+  "description": "Каталог входных дверей ООО СК «Пирс»",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

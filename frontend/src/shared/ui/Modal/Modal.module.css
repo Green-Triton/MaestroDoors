@@ -15,6 +15,12 @@
   animation: overlay-in var(--dur) var(--ease);
 }
 
+/** Окно поверх уже открытого окна. */
+.overlayTop {
+  z-index: 120;
+  background: rgba(30, 29, 28, 0.5);
+}
+
 .panel {
   position: relative;
   width: min(1180px, 100%);

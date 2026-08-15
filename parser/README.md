@@ -1,6 +1,6 @@
-# maestro-parser
+# catalog-parser
 
-Извлекает из `Каталог MaestroDoors ИЮЛЬ.pdf` два артефакта: изображения дверей
+Извлекает из PDF-каталога два артефакта: изображения дверей
 и структурированный датасет характеристик.
 
 ```bash
@@ -29,7 +29,7 @@ frontend/src/shared/api/catalog/doors.data.json   датасет
 - заголовок — 14 pt полужирный, цвет `#5b5b5b`; статусы — тот же кегль, `#434242`;
 - тело характеристик — 9 pt.
 
-Всё это описано константами в [`config.py`](maestro_parser/config.py).
+Всё это описано константами в [`config.py`](catalog_parser/config.py).
 
 ## Почему нельзя просто выгрузить картинки
 
@@ -51,12 +51,12 @@ frontend/src/shared/api/catalog/doors.data.json   датасет
 
 ## Как сделано вместо этого
 
-[`layout.py`](maestro_parser/layout.py) сводит шум страницы к геометрии слотов:
+[`layout.py`](catalog_parser/layout.py) сводит шум страницы к геометрии слотов:
 отсекает всё за пределами листа, делит страницу на два ряда, в каждом ряду
 берёт самый крупный прямоугольник слева (вид снаружи) и справа (вид внутри),
 и поглощает накладную графику, которая лежит внутри них.
 
-[`image_extractor.py`](maestro_parser/image_extractor.py) **растрирует страницу**
+[`image_extractor.py`](catalog_parser/image_extractor.py) **растрирует страницу**
 через этот прямоугольник, а не достаёт объекты. PDF-рендерер сам собирает стопку —
 полотно, маску и все накладки — ровно так, как это напечатано. Дальше:
 
@@ -76,7 +76,7 @@ frontend/src/shared/api/catalog/doors.data.json   датасет
 
 ## Разбор текста
 
-[`text_parser.py`](maestro_parser/text_parser.py) классифицирует строки
+[`text_parser.py`](catalog_parser/text_parser.py) классифицирует строки
 по кеглю, начертанию, цвету и координатам, а не по порядку чтения. Два места,
 где это было неочевидно:
 
@@ -96,9 +96,9 @@ frontend/src/shared/api/catalog/doors.data.json   датасет
 
 ```jsonc
 {
-  "source": "Каталог MaestroDoors ИЮЛЬ.pdf",
+  "source": "каталог.pdf",
   "generatedAt": "2026-08-13T…",
-  "cover": "/doors/cover.webp",
+  "cover": "doors/cover.webp",
   "collections": [
     { "id": "met-mdf-60", "title": "6 см · МЕТ/МДФ", "description": "…", "count": 3 }
   ],
@@ -113,10 +113,10 @@ frontend/src/shared/api/catalog/doors.data.json   датасет
       "badges": ["В наличии"],
       "description": "…",
       "images": {
-        "front": "/doors/mst-1-front.webp",
-        "back": "/doors/mst-1-back.webp",
-        "frontCard": "/doors/mst-1-front-card.webp",
-        "backCard": "/doors/mst-1-back-card.webp"
+        "front": "doors/mst-1-front.webp",
+        "back": "doors/mst-1-back.webp",
+        "frontCard": "doors/mst-1-front-card.webp",
+        "backCard": "doors/mst-1-back-card.webp"
       },
       "specs": {
         "material": "Толщина 60мм / с МДФ 60мм",
@@ -140,7 +140,7 @@ frontend/src/shared/api/catalog/doors.data.json   датасет
 
 ## Правки под новый каталог
 
-Если вёрстка сменится, почти всё настраивается в [`config.py`](maestro_parser/config.py):
+Если вёрстка сменится, почти всё настраивается в [`config.py`](catalog_parser/config.py):
 
 | Что | Где |
 |---|---|

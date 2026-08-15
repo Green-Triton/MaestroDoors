@@ -1,12 +1,12 @@
 import type { Door, DoorCollection, DoorView } from './types'
 
-/** Вспомогательная функция для безопасного формирования пути с учетом BASE_URL */
-const toPublicUrl = (path: string): string => {
-  if (!path) return ''
-  // Убираем слэш в начале (если он есть), чтобы BASE_URL не сдвоил слэши: "/doors/..." -> "doors/..."
-  const cleanPath = path.startsWith('/') ? path.slice(1) : path
-  return `${import.meta.env.BASE_URL}${cleanPath}`
-}
+/**
+ * Селекторы возвращают пути как есть.
+ *
+ * Базовый путь сборки подставляется один раз в `api/catalogApi.ts`, когда
+ * датасет загружается. Делать это ещё и здесь нельзя: префикс применится
+ * дважды и получится `/base/base/doors/...`.
+ */
 
 /** Sentinel collection id meaning "no filter applied". */
 export const ALL_COLLECTIONS = 'all' as const
@@ -22,17 +22,13 @@ export const filterByCollection = (
     ? [...doors]
     : doors.filter((door) => door.collectionId === collectionId)
 
-/** The image URL for a view, at the resolution the grid needs. */
-export const cardImage = (door: Door, view: DoorView): string => {
-  const path = view === 'front' ? door.images.frontCard : door.images.backCard
-  return toPublicUrl(path)
-}
+/** Адрес картинки для сетки. */
+export const cardImage = (door: Door, view: DoorView): string =>
+  view === 'front' ? door.images.frontCard : door.images.backCard
 
-/** The image URL for a view, at the resolution the modal needs. */
-export const fullImage = (door: Door, view: DoorView): string => {
-  const path = view === 'front' ? door.images.front : door.images.back
-  return toPublicUrl(path)
-}
+/** Адрес картинки для модального окна. */
+export const fullImage = (door: Door, view: DoorView): string =>
+  view === 'front' ? door.images.front : door.images.back
 
 /** Human label for a view, used on the toggle and as alt text. */
 export const viewLabel = (view: DoorView): string =>
