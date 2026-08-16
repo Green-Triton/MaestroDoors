@@ -40,7 +40,16 @@ if [ ! -f "$APP_DIR/backend/.env" ]; then
   exit 1
 fi
 
+echo "Права доступа"
+# Архив собирается на Windows, а тамошний tar не хранит права Unix — без явной
+# установки всё распаковывается как 777/666, то есть доступно на запись любому
+# пользователю сервера. Выставляем каталогам 755, файлам 644.
 $SUDO chown -R "$APP_USER:$APP_USER" "$APP_DIR"
+$SUDO chmod 755 "$APP_DIR" "$APP_DIR/frontend" "$APP_DIR/backend"
+$SUDO chmod -R u=rwX,go=rX "$APP_DIR/frontend/dist" "$APP_DIR/backend/dist"
+$SUDO chmod 644 "$APP_DIR/backend/package.json" "$APP_DIR/backend/package-lock.json"
+# node_modules не трогаем: права там расставляет npm, и в .bin нужны
+# исполняемые биты.
 $SUDO chmod 600 "$APP_DIR/backend/.env"
 
 echo "Перезапуск службы"

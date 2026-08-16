@@ -47,6 +47,35 @@ $archive = Join-Path ([System.IO.Path]::GetTempPath()) $archiveName
 function Step($text) { Write-Host "`n==> $text" -ForegroundColor Cyan }
 function Fail($text) { Write-Host "ОШИБКА: $text" -ForegroundColor Red; exit 1 }
 
+<#
+.SYNOPSIS
+    Запускает внешнюю программу и проверяет её код возврата.
+.DESCRIPTION
+    Обёртка нужна из-за особенности PowerShell: при $ErrorActionPreference='Stop'
+    любая строка, которую внешняя программа написала в stderr, считается
+    фатальной ошибкой. А туда пишут обычные сообщения — npm свои notice, scp
+    индикатор progress. Без этой обёртки скрипт обрывался на успешной команде.
+
+    Единственный надёжный признак успеха для внешней программы — код возврата,
+    его и проверяем.
+#>
+function Invoke-Native {
+    param(
+        [Parameter(Mandatory = $true)][scriptblock]$Command,
+        [Parameter(Mandatory = $true)][string]$ErrorMessage
+    )
+
+    $previous = $ErrorActionPreference
+    $ErrorActionPreference = 'Continue'
+    try {
+        & $Command 2>&1 | ForEach-Object { Write-Host $_ }
+    } finally {
+        $ErrorActionPreference = $previous
+    }
+
+    if ($LASTEXITCODE -ne 0) { Fail $ErrorMessage }
+}
+
 foreach ($tool in 'ssh', 'scp', 'tar', 'npm') {
     if (-not (Get-Command $tool -ErrorAction SilentlyContinue)) {
         Fail "не найдена команда '$tool'. ssh/scp/tar входят в Windows 10+, npm — в Node.js."
@@ -57,12 +86,10 @@ foreach ($tool in 'ssh', 'scp', 'tar', 'npm') {
 
 if (-not $SkipBuild) {
     Step 'Сборка фронтенда'
-    npm run build --prefix "$root/frontend"
-    if ($LASTEXITCODE -ne 0) { Fail 'сборка фронтенда не прошла' }
+    Invoke-Native { npm run build --prefix "$root/frontend" } 'сборка фронтенда не прошла'
 
     Step 'Сборка бэкенда'
-    npm run build --prefix "$root/backend"
-    if ($LASTEXITCODE -ne 0) { Fail 'сборка бэкенда не прошла' }
+    Invoke-Native { npm run build --prefix "$root/backend" } 'сборка бэкенда не прошла'
 }
 
 foreach ($required in "$root/frontend/dist/index.html", "$root/backend/dist/index.js") {
@@ -80,8 +107,7 @@ Copy-Item "$root/backend/dist" "$stage/backend/dist" -Recurse
 Copy-Item "$root/backend/package.json", "$root/backend/package-lock.json" "$stage/backend/"
 
 if (Test-Path $archive) { Remove-Item $archive -Force }
-tar -czf $archive -C $stage .
-if ($LASTEXITCODE -ne 0) { Fail 'не удалось создать архив' }
+Invoke-Native { tar -czf $archive -C $stage . } 'не удалось создать архив'
 
 $sizeMb = [math]::Round((Get-Item $archive).Length / 1MB, 1)
 Write-Host "   архив: $sizeMb МБ"
@@ -89,27 +115,26 @@ Write-Host "   архив: $sizeMb МБ"
 # ---- Отправка ---------------------------------------------------------------
 
 Step "Отправка на $Server"
-scp $archive "${Server}:/tmp/$archiveName"
-if ($LASTEXITCODE -ne 0) { Fail 'не удалось скопировать архив (проверьте адрес и доступ по SSH)' }
+Invoke-Native { scp $archive "${Server}:/tmp/$archiveName" } `
+    'не удалось скопировать архив (проверьте адрес и доступ по SSH)'
 
 # Серверная часть уезжает файлом, а не через конвейер: при передаче команд
 # по конвейеру PowerShell перекодирует текст, и кириллица внутри скрипта
 # приходит на сервер испорченной.
-scp "$PSScriptRoot/remote-install.sh" "${Server}:/tmp/pirs-remote-install.sh"
-if ($LASTEXITCODE -ne 0) { Fail 'не удалось скопировать установочный скрипт' }
+Invoke-Native { scp "$PSScriptRoot/remote-install.sh" "${Server}:/tmp/pirs-remote-install.sh" } `
+    'не удалось скопировать установочный скрипт'
 
 # ---- Установка --------------------------------------------------------------
 
 Step 'Установка на сервере'
-ssh $Server "bash /tmp/pirs-remote-install.sh '$Path' '/tmp/$archiveName'; rm -f /tmp/pirs-remote-install.sh"
-$deployOk = $LASTEXITCODE -eq 0
+Invoke-Native {
+    ssh $Server "bash /tmp/pirs-remote-install.sh '$Path' '/tmp/$archiveName'; rm -f /tmp/pirs-remote-install.sh"
+} 'установка на сервере не завершилась (смотрите вывод выше)'
 
 # ---- Уборка -----------------------------------------------------------------
 
 Remove-Item $stage -Recurse -Force -ErrorAction SilentlyContinue
 Remove-Item $archive -Force -ErrorAction SilentlyContinue
-
-if (-not $deployOk) { Fail 'установка на сервере не завершилась (смотрите вывод выше)' }
 
 Step 'Готово'
 Write-Host "Сайт обновлён. Проверьте: http://$($Server.Split('@')[-1])/" -ForegroundColor Green

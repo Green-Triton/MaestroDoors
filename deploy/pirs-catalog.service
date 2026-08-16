@@ -16,6 +16,11 @@ Documentation=file:///opt/pirs-catalog/DEPLOY.md
 After=network-online.target
 Wants=network-online.target
 
+# Ограничение частоты перезапусков задаётся именно здесь: в секции [Service]
+# systemd эти ключи не понимает и молча их игнорирует.
+StartLimitIntervalSec=60
+StartLimitBurst=5
+
 [Service]
 Type=simple
 User=pirs
@@ -28,11 +33,10 @@ WorkingDirectory=/opt/pirs-catalog/backend
 ExecStart=/usr/bin/node dist/index.js
 
 # Поднимать после падения, но не бесконечной чередой: пять неудач за минуту
-# означают поломку конфигурации, и её нужно видеть в статусе, а не в цикле.
+# (предел задан в секции [Unit]) означают поломку конфигурации, и её нужно
+# видеть в статусе, а не в цикле перезапусков.
 Restart=always
 RestartSec=5
-StartLimitIntervalSec=60
-StartLimitBurst=5
 
 # Приложение ничего не пишет на диск, поэтому ограничения безопасные.
 NoNewPrivileges=true
