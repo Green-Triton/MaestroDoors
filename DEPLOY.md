@@ -31,7 +31,7 @@ PDF-каталог — только результат, около 6 МБ.
 ## Шаг 1. Подключиться к серверу
 
 ```bash
-ssh root@203.0.113.10
+ssh root@159.194.209.187
 ```
 
 Подставьте IP из панели Beget. При первом входе согласитесь с отпечатком ключа.
@@ -43,13 +43,13 @@ ssh root@203.0.113.10
 Со **своей машины** скопируйте на сервер каталог `deploy/`:
 
 ```bash
-scp -r deploy root@203.0.113.10:/tmp/
+scp -r deploy root@159.194.209.187:/tmp/
 ```
 
 На **сервере** запустите настройку, указав свой домен:
 
 ```bash
-bash /tmp/deploy/setup-server.sh sk-pirs.ru
+bash /tmp/deploy/setup-server.sh dveripirs.ru
 ```
 
 Домена ещё нет — запустите без него, сайт будет открываться по IP:
@@ -114,13 +114,13 @@ chmod 600 /opt/pirs-catalog/backend/.env
 Со **своей машины**, из каталога проекта:
 
 ```powershell
-.\deploy\deploy.ps1 -Server root@203.0.113.10
+.\deploy\deploy.ps1 -Server root@159.194.209.187
 ```
 
 Скрипт соберёт фронтенд и бэкенд, упакует результат, отправит на сервер,
 поставит зависимости и перезапустит службу. В конце напишет «Сервис запущен».
 
-Откройте `http://203.0.113.10` — сайт должен работать.
+Откройте `http://159.194.209.187` — сайт должен работать.
 
 <details>
 <summary>То же самое вручную, без скрипта</summary>
@@ -130,9 +130,9 @@ npm run build --prefix frontend
 npm run build --prefix backend
 
 tar -czf deploy.tar.gz frontend/dist backend/dist backend/package.json backend/package-lock.json
-scp deploy.tar.gz root@203.0.113.10:/tmp/
+scp deploy.tar.gz root@159.194.209.187:/tmp/
 
-ssh root@203.0.113.10 '
+ssh root@159.194.209.187 '
   rm -rf /opt/pirs-catalog/frontend/dist /opt/pirs-catalog/backend/dist
   tar -xzf /tmp/deploy.tar.gz -C /opt/pirs-catalog
   cd /opt/pirs-catalog/backend && npm ci --omit=dev
@@ -147,7 +147,7 @@ ssh root@203.0.113.10 '
 
 ## Шаг 5. Домен и HTTPS
 
-Убедитесь, что A-запись домена указывает на IP сервера (`ping sk-pirs.ru`
+Убедитесь, что A-запись домена указывает на IP сервера (`ping dveripirs.ru`
 должен показать этот адрес). Затем на **сервере**:
 
 ```bash
@@ -155,7 +155,7 @@ apt-get install -y certbot python3-certbot-nginx
 ```
 
 ```bash
-certbot --nginx -d sk-pirs.ru -d www.sk-pirs.ru
+certbot --nginx -d dveripirs.ru -d www.dveripirs.ru
 ```
 
 Certbot спросит почту, попросит согласиться с условиями и предложит
@@ -171,7 +171,7 @@ Certbot спросит почту, попросит согласиться с у
 **API отвечает:**
 
 ```bash
-curl https://sk-pirs.ru/api/health
+curl https://dveripirs.ru/api/health
 ```
 
 Ожидается `{"ok":true,"service":"leads",...}`.
@@ -199,7 +199,7 @@ systemctl status pirs-catalog
 Изменили код или пересобрали каталог из PDF — одна команда со своей машины:
 
 ```powershell
-.\deploy\deploy.ps1 -Server root@203.0.113.10
+.\deploy\deploy.ps1 -Server root@159.194.209.187
 ```
 
 `.env` на сервере при этом не трогается.

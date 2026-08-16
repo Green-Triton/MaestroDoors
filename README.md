@@ -104,13 +104,13 @@ Ubuntu. Пошаговая инструкция — в [DEPLOY.md](DEPLOY.md), �
 Коротко: один раз настроить сервер
 
 ```bash
-bash /tmp/deploy/setup-server.sh sk-pirs.ru
+bash /tmp/deploy/setup-server.sh dveripirs.ru
 ```
 
 и дальше обновлять сайт одной командой со своей машины:
 
 ```powershell
-.\deploy\deploy.ps1 -Server root@203.0.113.10
+.\deploy\deploy.ps1 -Server root@159.194.209.187
 ```
 
 Сборка идёт локально — серверу не нужны ни исходники, ни Python, ни PDF-каталог.
